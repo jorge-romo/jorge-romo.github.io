@@ -1,7 +1,7 @@
 import getYears from '@/utilites/getYears';
 import { Book, Coffee, Music, Plane, Tent, Users } from 'lucide-react';
 import type { IconType } from 'react-icons';
-import { FaGithub, FaLinkedin, FaTwitter } from 'react-icons/fa';
+import { FaGithub, FaGoogle, FaLinkedin, FaTwitter } from 'react-icons/fa';
 
 export const personalInterests: {
   icon: IconType;
@@ -40,11 +40,16 @@ export const socialLinks = [
     href: '',
     icon: FaTwitter,
   },
+  {
+    name: 'Gmail',
+    href: 'mailto:romo.jorge126@gmail.com',
+    icon: FaGoogle,
+  },
 ];
 
 export const contactInfo = {
   phone: '',
-  email: '',
+  email: 'romo.jorge126@gmail.com',
 };
 
 export const githubRepoLink =

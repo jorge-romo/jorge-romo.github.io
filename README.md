@@ -15,10 +15,8 @@ and Tailwind CSS.
 - [React](https://react.dev/) - A JavaScript library for building user interfaces
 - [Tailwind CSS](https://tailwindcss.com/) - A utility-first CSS framework
 - [TypeScript](https://www.typescriptlang.org/) - JavaScript with syntax for types
-- [Lucide React](https://github.com/lucide-icons/lucide-react) - A collection of SVG icons for React
 - [ESLint](https://eslint.org/) - A linting tool for JavaScript and TypeScript
-- [PostCSS](https://postcss.org/) - A tool for transforming CSS with JavaScript
-- [Autoprefixer](https://github.com/postcss/autoprefixer) - A PostCSS plugin to add vendor prefixes to CSS
+- [SWC](https://swc.rs/) - Rust-based platform for the Web
 
 ## 🎨 Features
 
@@ -39,7 +37,8 @@ and Tailwind CSS.
 
 - TypeScript for static type checking
 - ESLint configured for consistent code style
-- PostCSS with Autoprefixer for optimized CSS
+- TailwindCSS for styles
+- SWC compiler to speed up unit testing process
 - Server-side rendering with Next.js
 
 ## 📋 Prerequisites
