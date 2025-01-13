@@ -1,0 +1,25 @@
+# Ignore artifacts:
+build
+coverage
+dist
+node_modules
+
+# Ignore all map files:
+*.map
+
+# Ignore Next.js specific folders:
+.next
+.cache
+next.config.ts
+next-env.d.ts
+out
+
+# Ignore TypeScript build output:
+*.tsbuildinfo
+
+# Ignore NPM lock files
+package-lock.json
+yarn.lock
+
+# Ignore public folder
+public
