@@ -1,35 +1,17 @@
-import {
-  SiEslint,
-  SiFramer,
-  SiJest,
-  SiNextdotjs,
-  SiReact,
-  SiTailwindcss,
-  SiTypescript,
-} from 'react-icons/si';
 import React from 'react';
 import { FaGithub } from 'react-icons/fa';
 import { githubRepoLink, personalInfo } from '@/data/personal';
+import { techsUsedThisProject } from '@/data/projects';
 
 const Footer: React.FC = () => {
   const currentYear = new Date().getFullYear();
-
-  const technologies = [
-    { name: 'React', icon: SiReact },
-    { name: 'Next.js', icon: SiNextdotjs },
-    { name: 'TypeScript', icon: SiTypescript },
-    { name: 'TailwindCSS', icon: SiTailwindcss },
-    { name: 'Framer Motion', icon: SiFramer },
-    { name: 'JavaScript/ESLint', icon: SiEslint },
-    { name: 'Jest', icon: SiJest },
-  ];
 
   return (
     <footer className="transition-colors-custom border-t border-zinc-100 bg-white py-8 dark:border-zinc-700/50 dark:bg-zinc-800">
       <div className="container mx-auto px-4">
         <div className="mx-auto max-w-5xl">
           <div className="flex flex-wrap items-center justify-center gap-4">
-            {technologies.map((tech, index) => (
+            {techsUsedThisProject.map((tech, index) => (
               <div key={index} title={tech.name}>
                 {React.createElement(
                   tech.icon as React.ComponentType<{ className: string }>,

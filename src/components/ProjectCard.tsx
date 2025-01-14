@@ -56,6 +56,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
             src={image}
             alt={title}
             fill
+            style={{ objectFit: 'contain' }}
           />
         ) : (
           <ImagePlaceholder />
@@ -83,25 +84,29 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
         </div>
 
         <div className="flex gap-4">
-          <a
-            href={github}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="flex items-center gap-2 rounded-lg bg-zinc-100 px-4 py-2 text-secondary transition-colors hover:bg-zinc-200 dark:bg-zinc-700/50 dark:text-zinc-300 dark:hover:bg-zinc-700/80"
-          >
-            <FaGithub className="h-5 w-5" />
-            <span>GitHub</span>
-          </a>
+          {!!github && (
+            <a
+              href={github}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-2 rounded-lg bg-zinc-100 px-4 py-2 text-secondary transition-colors hover:bg-zinc-200 dark:bg-zinc-700/50 dark:text-zinc-300 dark:hover:bg-zinc-700/80"
+            >
+              <FaGithub className="h-5 w-5" />
+              <span>GitHub</span>
+            </a>
+          )}
 
-          <a
-            href={website}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="flex items-center gap-2 rounded-lg bg-zinc-100 px-4 py-2 text-secondary transition-colors hover:bg-zinc-200 dark:bg-zinc-700/50 dark:text-zinc-300 dark:hover:bg-zinc-700/80"
-          >
-            <FaExternalLinkAlt className="h-4 w-4" />
-            <span>Visit Site</span>
-          </a>
+          {!!website && (
+            <a
+              href={website}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-2 rounded-lg bg-zinc-100 px-4 py-2 text-secondary transition-colors hover:bg-zinc-200 dark:bg-zinc-700/50 dark:text-zinc-300 dark:hover:bg-zinc-700/80"
+            >
+              <FaExternalLinkAlt className="h-4 w-4" />
+              <span>Visit Site</span>
+            </a>
+          )}
         </div>
       </div>
     </div>

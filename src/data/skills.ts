@@ -1,11 +1,11 @@
 import {
-  SiAntdesign,
+  SiAngular,
   SiGit,
+  SiGraphql,
   SiJest,
   SiMaterialdesign,
   SiNextdotjs,
   SiReact,
-  SiReactquery,
   SiRedux,
   SiTailwindcss,
   SiTypescript,
@@ -13,13 +13,13 @@ import {
 
 export const skills = [
   { name: 'React', icon: SiReact },
+  { name: 'Angular', icon: SiAngular },
   { name: 'TypeScript', icon: SiTypescript },
   { name: 'Next.js', icon: SiNextdotjs },
-  { name: 'Tailwind', icon: SiTailwindcss },
-  { name: 'Git', icon: SiGit },
   { name: 'Material UI', icon: SiMaterialdesign },
-  { name: 'Ant Design', icon: SiAntdesign },
+  { name: 'Tailwind', icon: SiTailwindcss },
   { name: 'Jest', icon: SiJest },
   { name: 'Redux', icon: SiRedux },
-  { name: 'React Query', icon: SiReactquery },
+  { name: 'GraphQL', icon: SiGraphql },
+  { name: 'Git', icon: SiGit },
 ];
