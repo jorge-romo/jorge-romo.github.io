@@ -22,7 +22,7 @@ const Header: React.FC = () => {
         <Link href="#home" className="flex items-center gap-2">
           <Code className="h-5 w-5 text-secondary dark:text-zinc-300" />
           <h3 className="text-xl font-medium text-primary-dark dark:text-zinc-50">
-            PS
+            JR
           </h3>
         </Link>
 
