@@ -1,5 +1,6 @@
 import React from 'react';
 import { socialLinks } from '@/data/personal';
+import DownloadResumeButton from '@/components/DownloadResumeButton';
 
 const HeroSocialLinks: React.FC = () => {
   return (
@@ -18,6 +19,7 @@ const HeroSocialLinks: React.FC = () => {
             <span>{link.name}</span>
           </a>
         ))}
+      <DownloadResumeButton />
     </div>
   );
 };
