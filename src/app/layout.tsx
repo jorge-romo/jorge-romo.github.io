@@ -22,7 +22,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en-US">
-      <body className={`${inter.className} text-dark min-h-screen bg-gray-50`}>
+      <body className={`${inter.className} text-dark min-h-screen`}>
         <ThemeProvider attribute="class">
           <Header />
           <main>{children}</main>
