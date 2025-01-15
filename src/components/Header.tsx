@@ -1,9 +1,10 @@
 'use client';
 
 import React, { useState } from 'react';
-import { Code, Menu } from 'lucide-react';
 import { useTheme } from 'next-themes';
 import Link from 'next/link';
+import Image from 'next/image';
+import { Menu } from 'lucide-react';
 import NavMenu from '@/components/NavMenu';
 import MobileMenu from '@/components/MobileMenu';
 import ToggleTheme from '@/components/ToggleTheme';
@@ -21,7 +22,13 @@ const Header: React.FC = () => {
     >
       <nav className="container mx-auto flex items-center justify-between px-4 py-4">
         <Link href="#home" className="flex items-center gap-2">
-          <Code className="h-5 w-5 text-secondary dark:text-zinc-300" />
+          <Image
+            src="/images/logo.png"
+            height={28}
+            width={28}
+            style={{ objectFit: 'contain' }}
+            alt="Logo"
+          />
           <h3 className="text-xl font-medium text-primary-dark dark:text-zinc-50">
             JR
           </h3>
