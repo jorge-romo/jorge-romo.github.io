@@ -1,5 +1,5 @@
-import { personalInfo } from '@/data/personal';
 import React from 'react';
+import { personalInfo } from '@/data';
 
 const HeroIntro: React.FC = () => {
   return (

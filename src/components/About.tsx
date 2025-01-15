@@ -1,5 +1,5 @@
 import React from 'react';
-import { personalInfo, personalInterests } from '@/data/personal';
+import { personalInfo, personalInterests } from '@/data';
 
 const About: React.FC = () => {
   return (

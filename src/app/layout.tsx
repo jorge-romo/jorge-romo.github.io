@@ -6,7 +6,7 @@ import './globals.css';
 import ThemeProvider from '@/components/ThemeProvider';
 import Footer from '@/components/Footer';
 import ScrollToTopButton from '@/components/ScrollToTopButton';
-import { personalInfo } from '@/data/personal';
+import { personalInfo } from '@/data';
 
 const inter = Inter({ subsets: ['latin'] });
 
