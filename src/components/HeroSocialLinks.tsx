@@ -1,10 +1,12 @@
 import React from 'react';
-import { socialLinks } from '@/data/personal';
-import DownloadResumeButton from '@/components/DownloadResumeButton';
+import { socialLinks } from '@/data';
 
 const HeroSocialLinks: React.FC = () => {
   return (
-    <div className="flex flex-row gap-4" data-testid="hero-social-links">
+    <div
+      className="flex flex-row flex-wrap gap-4"
+      data-testid="hero-social-links"
+    >
       {socialLinks
         .filter((link) => !!link.href)
         .map((link) => (
@@ -19,7 +21,6 @@ const HeroSocialLinks: React.FC = () => {
             <span>{link.name}</span>
           </a>
         ))}
-      <DownloadResumeButton />
     </div>
   );
 };

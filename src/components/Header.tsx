@@ -2,11 +2,12 @@
 
 import React, { useState } from 'react';
 import { Code, Menu } from 'lucide-react';
-import ToggleTheme from '@/components/ToggleTheme';
 import { useTheme } from 'next-themes';
-import NavMenu from './NavMenu';
 import Link from 'next/link';
+import NavMenu from '@/components/NavMenu';
 import MobileMenu from '@/components/MobileMenu';
+import ToggleTheme from '@/components/ToggleTheme';
+import DownloadResumeButton from '@/components/DownloadResumeButton';
 
 const Header: React.FC = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -28,10 +29,12 @@ const Header: React.FC = () => {
 
         <div className="hidden items-center space-x-6 md:flex">
           <NavMenu />
+          <DownloadResumeButton />
           <ToggleTheme />
         </div>
 
         <div className="flex items-center gap-4 md:hidden">
+          <DownloadResumeButton />
           <ToggleTheme />
           <button
             onClick={() => setIsMobileMenuOpen(true)}
