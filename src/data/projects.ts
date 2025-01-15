@@ -14,6 +14,7 @@ import {
   SiReduxsaga,
   SiSass,
   SiStorybook,
+  SiSwc,
   SiTailwindcss,
   SiTypescript,
 } from 'react-icons/si';
@@ -76,12 +77,16 @@ export const projects = [
   },
 ];
 
-export const techsUsedThisProject = [
-  { name: 'React', icon: SiReact },
-  { name: 'Next.js', icon: SiNextdotjs },
-  { name: 'TypeScript', icon: SiTypescript },
-  { name: 'TailwindCSS', icon: SiTailwindcss },
-  { name: 'Framer Motion', icon: SiFramer },
-  { name: 'JavaScript/ESLint', icon: SiEslint },
-  { name: 'Jest', icon: SiJest },
-];
+export const aboutThisProject = {
+  repo: 'https://github.com/jorge-romo/jorge-romo.github.io',
+  technoligies: [
+    { name: 'React', icon: SiReact },
+    { name: 'Next.js', icon: SiNextdotjs },
+    { name: 'TypeScript', icon: SiTypescript },
+    { name: 'TailwindCSS', icon: SiTailwindcss },
+    { name: 'Framer Motion', icon: SiFramer },
+    { name: 'ESLint', icon: SiEslint },
+    { name: 'SWC', icon: SiSwc },
+    { name: 'Jest', icon: SiJest },
+  ],
+};
