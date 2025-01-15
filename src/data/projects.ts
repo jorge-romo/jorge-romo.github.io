@@ -1,8 +1,6 @@
 import {
   SiApollographql,
-  SiEslint,
   SiExpress,
-  SiFramer,
   SiJavascript,
   SiJest,
   SiMaterialdesign,
@@ -14,8 +12,6 @@ import {
   SiReduxsaga,
   SiSass,
   SiStorybook,
-  SiSwc,
-  SiTailwindcss,
   SiTypescript,
 } from 'react-icons/si';
 
@@ -76,17 +72,3 @@ export const projects = [
     featured: false,
   },
 ];
-
-export const aboutThisProject = {
-  repo: 'https://github.com/jorge-romo/jorge-romo.github.io',
-  technoligies: [
-    { name: 'React', icon: SiReact },
-    { name: 'Next.js', icon: SiNextdotjs },
-    { name: 'TypeScript', icon: SiTypescript },
-    { name: 'TailwindCSS', icon: SiTailwindcss },
-    { name: 'Framer Motion', icon: SiFramer },
-    { name: 'ESLint', icon: SiEslint },
-    { name: 'SWC', icon: SiSwc },
-    { name: 'Jest', icon: SiJest },
-  ],
-};

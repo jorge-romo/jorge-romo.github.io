@@ -1,7 +1,14 @@
-import getYears from '@/utilites/getYears';
-import { Book, Coffee, Music, Plane, Tent, Users } from 'lucide-react';
+import { Book, Coffee, Music, Users } from 'lucide-react';
 import type { IconType } from 'react-icons';
-import { FaGithub, FaGoogle, FaLinkedin, FaTwitter } from 'react-icons/fa';
+import {
+  FaGithub,
+  FaGoogle,
+  FaLinkedin,
+  FaPlaystation,
+  FaTwitter,
+  FaWalking,
+} from 'react-icons/fa';
+import { getYears } from '@/utilities';
 
 export const personalInterests: {
   icon: IconType;
@@ -10,8 +17,8 @@ export const personalInterests: {
   { icon: Coffee, label: 'Coffee' },
   { icon: Music, label: 'Music' },
   { icon: Book, label: 'Book' },
-  { icon: Plane, label: 'Travel' },
-  { icon: Tent, label: 'Camping' },
+  { icon: FaPlaystation, label: 'Game' },
+  { icon: FaWalking, label: 'Hicking' },
   { icon: Users, label: 'Family Time' },
 ];
 
@@ -52,6 +59,3 @@ export const contactInfo = {
   phone: '',
   email: 'romo.jorge126@gmail.com',
 };
-
-export const githubRepoLink =
-  'https://github.com/jorge-romo/jorge-romo.github.io';
