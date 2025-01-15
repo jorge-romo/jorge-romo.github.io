@@ -1,5 +1,5 @@
 import React from 'react';
-import { skills } from '@/data/skills';
+import { skills } from '@/data';
 
 const Skills: React.FC = () => {
   return (

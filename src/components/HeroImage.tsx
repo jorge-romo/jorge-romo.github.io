@@ -1,11 +1,11 @@
 import React from 'react';
 import Image from 'next/image';
-import { personalInfo } from '@/data/personal';
+import { personalInfo } from '@/data';
 
 const HeroImage: React.FC = () => {
   return (
     <div
-      className="relative h-64 w-64 md:h-80 md:w-80"
+      className="relative h-48 w-48 md:h-60 md:w-60 lg:h-80 lg:w-80"
       data-testid="hero-image"
     >
       <div className="absolute inset-0 -rotate-6 transform rounded-full bg-zinc-100/50 transition-all duration-custom group-hover:rotate-6 dark:bg-zinc-700/30" />

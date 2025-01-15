@@ -1,25 +1,35 @@
+import { PlayCircle } from 'lucide-react';
 import {
   SiAngular,
   SiGit,
   SiGraphql,
+  SiJavascript,
   SiJest,
   SiMaterialdesign,
+  SiMongodb,
   SiNextdotjs,
+  SiNodedotjs,
   SiReact,
   SiRedux,
+  SiStorybook,
   SiTailwindcss,
   SiTypescript,
 } from 'react-icons/si';
 
 export const skills = [
   { name: 'React', icon: SiReact },
-  { name: 'Angular', icon: SiAngular },
-  { name: 'TypeScript', icon: SiTypescript },
   { name: 'Next.js', icon: SiNextdotjs },
+  { name: 'Angular', icon: SiAngular },
+  { name: 'Javascript', icon: SiJavascript },
+  { name: 'TypeScript', icon: SiTypescript },
   { name: 'Material UI', icon: SiMaterialdesign },
   { name: 'Tailwind', icon: SiTailwindcss },
+  { name: 'GraphQL', icon: SiGraphql },
+  { name: 'Node.js', icon: SiNodedotjs },
+  { name: 'MongoDB', icon: SiMongodb },
   { name: 'Jest', icon: SiJest },
   { name: 'Redux', icon: SiRedux },
-  { name: 'GraphQL', icon: SiGraphql },
+  { name: 'Storybook', icon: SiStorybook },
+  { name: 'CI/CD', icon: PlayCircle },
   { name: 'Git', icon: SiGit },
 ];

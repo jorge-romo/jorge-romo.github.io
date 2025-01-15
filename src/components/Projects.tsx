@@ -1,6 +1,6 @@
 import React from 'react';
 import ProjectCard from '@/components/ProjectCard';
-import { projects as _projects } from '@/data/projects';
+import { projects as _projects } from '@/data';
 
 const projects = [..._projects];
 const featuredProjectIndex = projects.findIndex((p) => p.featured === true);

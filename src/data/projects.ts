@@ -1,8 +1,6 @@
 import {
   SiApollographql,
-  SiEslint,
   SiExpress,
-  SiFramer,
   SiJavascript,
   SiJest,
   SiMaterialdesign,
@@ -14,7 +12,6 @@ import {
   SiReduxsaga,
   SiSass,
   SiStorybook,
-  SiTailwindcss,
   SiTypescript,
 } from 'react-icons/si';
 
@@ -74,14 +71,4 @@ export const projects = [
     website: '',
     featured: false,
   },
-];
-
-export const techsUsedThisProject = [
-  { name: 'React', icon: SiReact },
-  { name: 'Next.js', icon: SiNextdotjs },
-  { name: 'TypeScript', icon: SiTypescript },
-  { name: 'TailwindCSS', icon: SiTailwindcss },
-  { name: 'Framer Motion', icon: SiFramer },
-  { name: 'JavaScript/ESLint', icon: SiEslint },
-  { name: 'Jest', icon: SiJest },
 ];

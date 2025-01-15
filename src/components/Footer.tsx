@@ -1,7 +1,6 @@
 import React from 'react';
 import { FaGithub } from 'react-icons/fa';
-import { githubRepoLink, personalInfo } from '@/data/personal';
-import { techsUsedThisProject } from '@/data/projects';
+import { personalInfo, aboutThisProject } from '@/data';
 
 const Footer: React.FC = () => {
   const currentYear = new Date().getFullYear();
@@ -11,7 +10,7 @@ const Footer: React.FC = () => {
       <div className="container mx-auto px-4">
         <div className="mx-auto max-w-5xl">
           <div className="flex flex-wrap items-center justify-center gap-4">
-            {techsUsedThisProject.map((tech, index) => (
+            {aboutThisProject.technoligies.map((tech, index) => (
               <div key={index} title={tech.name}>
                 {React.createElement(
                   tech.icon as React.ComponentType<{ className: string }>,
@@ -35,7 +34,7 @@ const Footer: React.FC = () => {
             <span className="hidden md:inline">•</span>
 
             <a
-              href={githubRepoLink}
+              href={aboutThisProject.repo}
               rel="noopener noreferrer"
               className="flex items-center gap-2 text-sm text-zinc-600 transition-colors hover:text-zinc-900 dark:text-zinc-300 dark:hover:text-white"
               title="GitHub Repository"
