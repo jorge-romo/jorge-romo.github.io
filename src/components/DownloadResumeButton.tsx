@@ -9,7 +9,9 @@ const DownloadResumeButton: React.FC = () => {
   const handleDownload = () => {
     const link = document.createElement('a');
     link.href = personalInfo.resume;
-    link.download = getFileNameFromPath(personalInfo.resume);
+    const fileName = getFileNameFromPath(personalInfo.resume);
+    const ext = fileName.split('.').pop();
+    link.download = `${personalInfo.name.split(' ').join('_')}_Resume.${ext}`;
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);

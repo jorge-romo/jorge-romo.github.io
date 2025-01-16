@@ -18,10 +18,10 @@ import {
 export const projects = [
   {
     title: 'Passion List',
-    role: 'Frontend Developer',
+    role: 'Javascript Developer',
     description:
-      "Passion List is a curated platform for car enthusiasts, showcasing the most intriguing cars for sale daily. From vintage classics and rare exotics to quirky oddities and hidden barn finds, Passion List is the go-to destination for car aficionados to discover, share, and discuss unique automobiles currently on the market. It's more than just a marketplace—it's a community for those passionate about cars.",
-    image: '/images/project-passionlist.jpg',
+      "PassionList is a curated platform for car enthusiasts, showcasing the most intriguing cars for sale daily. It's more than just a marketplace—it's a community for those passionate about cars. I collaborated with a team of developers to design and implement the company’s main webpage using the JavaScript stack, delivering a seamless and engaging user experience.",
+    image: '/images/projects/passionlist.png',
     technologies: [
       { icon: SiJavascript, name: 'Javascript' },
       { icon: SiReact, name: 'React' },
@@ -34,15 +34,15 @@ export const projects = [
       { icon: SiReduxsaga, name: 'Redux Saga' },
     ],
     github: '',
-    website: 'https://passionlist.com',
+    website: 'https://dev.passionlist.com',
     featured: false,
   },
   {
-    title: 'Solid Design',
+    title: 'FOUNDRY',
     role: 'Sr. Frontend Developer',
     description:
-      'Solid Design is a components foundation project aimed at providing a scalable, reusable, and efficient library of UI components. Designed to streamline development workflows, it offers a cohesive set of building blocks for creating modern, responsive, and consistent user interfaces. With a focus on flexibility and customization, Solid Design empowers developers to craft seamless user experiences across various applications.',
-    image: '/images/project-soliddesign.jpg',
+      'Foundry is a component foundation project designed to deliver a scalable, reusable, and efficient library of UI components. The project focuses on enhancing Foundry’s web page elements. I collaborated with a team of developers to create and refine various components, including text fields, radio buttons, and more, ensuring optimal functionality and usability.',
+    image: '/images/projects/foundry.png',
     technologies: [
       { icon: SiTypescript, name: 'TypeScript' },
       { icon: SiSass, name: 'SCSS' },
@@ -57,8 +57,8 @@ export const projects = [
     title: 'Matisse Exchange',
     role: 'Frontend Developer',
     description:
-      'Matisse Exchange is a cutting-edge cryptocurrency trading platform designed to provide secure, efficient, and user-friendly trading experiences. The platform offers real-time market analysis, seamless transactions, and support for a wide range of cryptocurrencies. Built with a focus on innovation and security, Matisse Exchange caters to both novice and experienced traders, empowering users to navigate the evolving digital asset market confidently.',
-    image: '/images/project-matisseexchange.jpg',
+      'Matisse Exchange is a personal project—a crypto exchange platform designed to provide a user-friendly environment for trading digital assets.',
+    image: '/images/projects/matisse-exchange.png',
     technologies: [
       { icon: SiReact, name: 'React' },
       { icon: SiNextdotjs, name: 'Next.js' },
