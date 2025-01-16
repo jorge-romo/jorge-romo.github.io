@@ -23,8 +23,8 @@ export const personalInterests: {
 ];
 
 export const personalInfo = {
-  photo: '/images/profile.jpg',
-  resume: '/pdfs/Jorge-Romo-Resume.pdf',
+  photo: '/images/profile.png',
+  resume: '/pdfs/Resume.pdf',
   name: 'Jorge Romo',
   title: 'Sr. Frontend Developer',
   bio: 'Building modern front-end applications with React, Next.js, and TypeScript to deliver clean, scalable, and high-performance user experiences.',
