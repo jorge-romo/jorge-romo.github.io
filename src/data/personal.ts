@@ -18,7 +18,7 @@ export const personalInterests: {
   { icon: Music, label: 'Music' },
   { icon: Book, label: 'Book' },
   { icon: FaPlaystation, label: 'Game' },
-  { icon: FaWalking, label: 'Hicking' },
+  { icon: FaWalking, label: 'Hiking' },
   { icon: Users, label: 'Family Time' },
 ];
 
