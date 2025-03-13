@@ -21,12 +21,12 @@ const Projects: React.FC = () => {
           Projects
         </h2>
 
-        <ul className="mx-auto grid max-w-6xl gap-8 md:grid-cols-2">
+        <ul className="mx-auto grid max-w-6xl grid-cols-1 gap-8 md:grid-cols-2">
           {featuredProject && (
             <ProjectCard
               as="li"
               project={featuredProject}
-              className="col-span-2"
+              className="md:col-span-2"
             />
           )}
           {projects.map((project, index) => (

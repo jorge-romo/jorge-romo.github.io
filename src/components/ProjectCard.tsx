@@ -4,8 +4,10 @@ import { FaGithub, FaExternalLinkAlt } from 'react-icons/fa';
 import { ImageIcon } from 'lucide-react';
 import type { IProject } from '@/data';
 import clsx from 'clsx';
+import { Button } from '@/components/ui';
 
-export interface ProjectCardProps<AsTarget> extends HTMLAttributes<AsTarget> {
+export interface ProjectCardProps<AsTarget extends HTMLElementType = 'div'>
+  extends HTMLAttributes<AsTarget> {
   as?: AsTarget;
   project: IProject;
 }
@@ -76,10 +78,10 @@ const ProjectCard = React.memo(
         <div className="mb-6 flex flex-wrap items-center gap-4">
           {technologies.map((tech, index) => (
             <div key={index} className="flex items-center gap-1">
-              {React.createElement(
-                tech.icon as React.ComponentType<{ className: string }>,
-                { className: 'w-5 h-5 text-secondary dark:text-zinc-300' },
-              )}
+              {React.createElement(tech.icon, {
+                className: 'w-5 h-5 text-secondary dark:text-zinc-300',
+                'aria-hidden': 'true',
+              })}
               <span className="hidden text-sm text-secondary dark:text-zinc-300 lg:inline">
                 {tech.name}
               </span>
@@ -89,27 +91,27 @@ const ProjectCard = React.memo(
         ,
         <div className="flex gap-4">
           {!!github && (
-            <a
+            <Button
+              as="a"
               href={github}
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center gap-2 rounded-lg bg-zinc-100 px-4 py-2 text-secondary transition-colors hover:bg-zinc-200 dark:bg-zinc-700/50 dark:text-zinc-300 dark:hover:bg-zinc-700/80"
             >
-              <FaGithub className="h-5 w-5" />
+              <FaGithub className="h-5 w-5" aria-hidden="true" />
               <span>GitHub</span>
-            </a>
+            </Button>
           )}
 
           {!!website && (
-            <a
+            <Button
+              as="a"
               href={website}
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center gap-2 rounded-lg bg-zinc-100 px-4 py-2 text-secondary transition-colors hover:bg-zinc-200 dark:bg-zinc-700/50 dark:text-zinc-300 dark:hover:bg-zinc-700/80"
             >
-              <FaExternalLinkAlt className="h-4 w-4" />
+              <FaExternalLinkAlt className="h-4 w-4" aria-hidden="true" />
               <span>Visit Site</span>
-            </a>
+            </Button>
           )}
         </div>
       </div>,

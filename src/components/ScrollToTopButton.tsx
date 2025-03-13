@@ -3,6 +3,7 @@
 import React, { useCallback, useEffect, useState } from 'react';
 import { ArrowUp } from 'lucide-react';
 import clsx from 'clsx';
+import { Button } from './ui';
 
 const ScrollToTopButton: React.FC = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -23,12 +24,13 @@ const ScrollToTopButton: React.FC = () => {
   }, []);
 
   return (
-    <button
+    <Button
       onClick={scrollToTop}
+      rounded="full"
+      variant="text"
       className={clsx(
-        'fixed bottom-8 right-8 rounded-full bg-white p-3 shadow-lg dark:bg-zinc-800 dark:shadow-zinc-800/20',
-        'text-secondary hover:-translate-y-1 hover:shadow-xl focus:outline-none focus:ring-2 dark:text-zinc-300',
-        'group z-50 transition-all duration-300 focus:ring-zinc-300 dark:focus:ring-zinc-700',
+        'group fixed bottom-8 right-8 z-50 bg-white p-4 shadow-lg dark:bg-zinc-800 dark:shadow-zinc-800/20',
+        'transition-all hover:-translate-y-1 hover:shadow-xl focus:outline-none focus:ring-2 focus:ring-zinc-300 dark:focus:ring-zinc-700',
         {
           'pointer-events-none opacity-0': !isVisible,
           'opacity-100': isVisible,
@@ -38,8 +40,8 @@ const ScrollToTopButton: React.FC = () => {
       aria-label="Scroll to top"
       role="button"
     >
-      <ArrowUp className="h-5 w-5 transition-transform duration-300 group-hover:scale-110" />
-    </button>
+      <ArrowUp className="h-5 w-5 transition-transform group-hover:scale-110" />
+    </Button>
   );
 };
 

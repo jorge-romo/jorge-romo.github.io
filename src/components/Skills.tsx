@@ -21,7 +21,10 @@ const Skills: React.FC = () => {
                 className="group flex flex-col items-center rounded-lg bg-zinc-100 p-6 transition-all duration-300 hover:-translate-y-1 hover:bg-zinc-200 dark:bg-zinc-700/30 dark:hover:bg-zinc-700/50"
               >
                 <span className="relative mb-4">
-                  <Icon className="h-8 w-8 text-secondary transition-transform duration-300 group-hover:scale-110 dark:text-zinc-300" />
+                  <Icon
+                    className="h-8 w-8 text-secondary transition-transform duration-300 group-hover:scale-110 dark:text-zinc-300"
+                    aria-hidden="true"
+                  />
                 </span>
 
                 <span className="text-center text-sm font-medium text-primary-dark dark:text-zinc-100">

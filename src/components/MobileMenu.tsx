@@ -1,7 +1,8 @@
 import React, { useEffect } from 'react';
 import { AnimatePresence, motion, PanInfo } from 'framer-motion';
 import { ChevronUp, X } from 'lucide-react';
-import NavMenu from './NavMenu';
+import { Button } from '@/components/ui';
+import NavMenu from '@/components/NavMenu';
 
 export interface MobileMenuProps {
   isMobileMenuOpen: boolean;
@@ -52,13 +53,14 @@ const MobileMenu: React.FC<MobileMenuProps> = ({
           }}
           onPanEnd={handleSwipe}
         >
-          <button
+          <Button
+            variant="text"
             onClick={() => setIsMobileMenuOpen(false)}
-            className="absolute right-4 top-4 text-secondary hover:text-primary dark:text-zinc-50 dark:hover:text-zinc-400"
+            className="absolute right-4 top-4"
             aria-label="Close menu"
           >
             <X className="h-6 w-6" />
-          </button>
+          </Button>
 
           <NavMenu
             isMobile

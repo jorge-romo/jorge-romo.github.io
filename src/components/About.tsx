@@ -39,6 +39,7 @@ const About: React.FC = () => {
                   <span className="mb-3 text-secondary transition-transform duration-300 group-hover:scale-110 dark:text-zinc-300">
                     {React.createElement(interest.icon, {
                       className: 'w-6 h-6 md:w-7 md:h-7',
+                      'aria-hidden': 'true',
                     })}
                   </span>
                   <span className="text-center text-sm text-primary-dark dark:text-zinc-100">
