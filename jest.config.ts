@@ -5,6 +5,7 @@ const config: Config = {
   testEnvironment: 'jsdom', // Ambiente de testes no navegador (útil para React)
   transform: {
     '^.+\\.(ts|tsx)$': '@swc/jest', // Usar SWC para compilar TS/TSX
+    '^.+\\.(svg|jpg|png)$': '<rootDir>/fileTransformer.ts',
   },
   setupFilesAfterEnv: ['<rootDir>/jest.setup.ts'], // Arquivo de setup de testes
   moduleNameMapper: {
