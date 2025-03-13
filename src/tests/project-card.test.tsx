@@ -1,9 +1,10 @@
 import React from 'react';
 import { render, screen } from '@testing-library/react';
 import ProjectCard from '@/components/ProjectCard';
+import { IProject } from '@/data';
 
-const mockProject = {
-  imageUrl: '/test-image.png',
+const mockProject: IProject = {
+  image: '/test-image.png',
   title: 'Test Project',
   description: 'This is a test project description.',
   role: 'Frontend Developer',
@@ -50,7 +51,7 @@ describe('ProjectCard Component', () => {
   });
 
   it('should render the placeholder if no image is provided', () => {
-    const projectWithoutImage = { ...mockProject, imageUrl: undefined };
+    const projectWithoutImage = { ...mockProject, image: undefined };
     render(<ProjectCard project={projectWithoutImage} />);
     const placeholder = screen.getByTestId('image-placeholder');
     expect(placeholder).toBeInTheDocument();

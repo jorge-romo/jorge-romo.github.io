@@ -1,3 +1,4 @@
+import type { StaticImageData } from 'next/image';
 import type { IconType } from 'react-icons';
 import {
   SiApollographql,
@@ -15,6 +16,9 @@ import {
   SiStorybook,
   SiTypescript,
 } from 'react-icons/si';
+import projectPassionListImg from '@/assets/images/projects/passionlist.png';
+import projectFoundryImg from '@/assets/images/projects/foundry.png';
+import projectMatisseExchangeImg from '@/assets/images/projects/matisse-exchange.png';
 
 export type IProjectTechnology = {
   icon: IconType;
@@ -25,7 +29,7 @@ export type IProject = {
   title: string;
   role: string;
   description: string;
-  imageUrl?: string;
+  image?: string | StaticImageData;
   technologies: IProjectTechnology[];
   github?: string;
   website?: string;
@@ -38,7 +42,7 @@ export const projects: IProject[] = [
     role: 'Javascript Developer',
     description:
       "PassionList is a curated platform for car enthusiasts, showcasing the most intriguing cars for sale daily. It's more than just a marketplace—it's a community for those passionate about cars. I collaborated with a team of developers to design and implement the company’s main webpage using the JavaScript stack, delivering a seamless and engaging user experience.",
-    imageUrl: '/images/projects/passionlist.png',
+    image: projectPassionListImg,
     technologies: [
       { icon: SiJavascript, name: 'Javascript' },
       { icon: SiReact, name: 'React' },
@@ -59,7 +63,7 @@ export const projects: IProject[] = [
     role: 'Sr. Frontend Developer',
     description:
       'Foundry is a component foundation project designed to deliver a scalable, reusable, and efficient library of UI components. The project focuses on enhancing Foundry’s web page elements. I collaborated with a team of developers to create and refine various components, including text fields, radio buttons, and more, ensuring optimal functionality and usability.',
-    imageUrl: '/images/projects/foundry.png',
+    image: projectFoundryImg,
     technologies: [
       { icon: SiTypescript, name: 'TypeScript' },
       { icon: SiSass, name: 'SCSS' },
@@ -75,7 +79,7 @@ export const projects: IProject[] = [
     role: 'Frontend Developer',
     description:
       'Matisse Exchange is a personal project—a crypto exchange platform designed to provide a user-friendly environment for trading digital assets.',
-    imageUrl: '/images/projects/matisse-exchange.png',
+    image: projectMatisseExchangeImg,
     technologies: [
       { icon: SiReact, name: 'React' },
       { icon: SiNextdotjs, name: 'Next.js' },

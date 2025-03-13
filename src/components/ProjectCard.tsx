@@ -36,7 +36,7 @@ const ProjectCard = React.memo(
   ) => {
     const {
       as = 'div',
-      project: { imageUrl, title, description, technologies, github, website },
+      project: { image, title, description, technologies, github, website },
       className,
       ...rest
     } = props;
@@ -54,13 +54,14 @@ const ProjectCard = React.memo(
       },
 
       <div className="relative aspect-video overflow-hidden">
-        {imageUrl ? (
+        {image ? (
           <Image
             className="transition-transform duration-500 group-hover:scale-105"
-            src={imageUrl}
-            alt={title}
+            src={image}
             fill
+            sizes="240px"
             style={{ objectFit: 'contain' }}
+            alt={title}
           />
         ) : (
           <ImagePlaceholder />

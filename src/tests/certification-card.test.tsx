@@ -8,7 +8,7 @@ const mockCertificate: ICertificate = {
   issuer: 'Issuer summary of the certificate',
   description: 'This is a description of the certificate',
   title: 'Test Certificate',
-  imageUrl: '/test-certificate.png',
+  image: '/test-certificate.png',
   link: 'https://certificate.com/certificate-2',
 };
 
