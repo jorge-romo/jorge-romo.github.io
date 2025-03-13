@@ -16,7 +16,7 @@ const CertificateCard = React.memo(
   ) => {
     const {
       as = 'div',
-      certificate: { imageUrl, title, description, issuer, link, issuedDate },
+      certificate: { image, title, description, issuer, link, issuedDate },
       className,
       ...rest
     } = props;
@@ -34,12 +34,12 @@ const CertificateCard = React.memo(
       },
       <Image
         className="transition-transform duration-500 group-hover:scale-105"
-        src={imageUrl}
-        alt={title}
+        src={image}
         sizes="180px"
         width={180}
         height={180}
         style={{ objectFit: 'contain' }}
+        alt={title}
       />,
       <div className="flex-1 pl-8">
         <h3 className="mb-4 text-2xl font-medium text-primary-dark dark:text-zinc-50">

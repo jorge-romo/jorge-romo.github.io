@@ -1,3 +1,4 @@
+import { StaticImageData } from 'next/image';
 import { Book, Coffee, Music, Users } from 'lucide-react';
 import type { IconType } from 'react-icons';
 import {
@@ -9,6 +10,7 @@ import {
   FaWalking,
 } from 'react-icons/fa';
 import { getYears } from '@/utilities';
+import profileImg from '@/assets/images/profile.png';
 
 export type IPersonalInterest = {
   icon: IconType;
@@ -25,7 +27,7 @@ export const personalInterests: IPersonalInterest[] = [
 ];
 
 export type IPersonalInfo = {
-  photo: string;
+  photo: string | StaticImageData;
   resume: string;
   name: string;
   title: string;
@@ -35,7 +37,7 @@ export type IPersonalInfo = {
 };
 
 export const personalInfo: IPersonalInfo = {
-  photo: '/images/profile.png',
+  photo: profileImg,
   resume: '/pdfs/Resume.pdf',
   name: 'Jorge Romo',
   title: 'Sr. Frontend Developer',

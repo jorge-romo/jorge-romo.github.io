@@ -9,6 +9,7 @@ import NavMenu from '@/components/NavMenu';
 import MobileMenu from '@/components/MobileMenu';
 import ToggleTheme from '@/components/ToggleTheme';
 import DownloadResumeButton from '@/components/DownloadResumeButton';
+import logoImg from '@/assets/images/logo.png';
 
 const Header: React.FC = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -23,7 +24,7 @@ const Header: React.FC = () => {
       <nav className="container mx-auto flex items-center justify-between px-4 py-4">
         <Link href="#home" className="flex items-center gap-2">
           <Image
-            src="/images/logo.png"
+            src={logoImg}
             height={28}
             width={28}
             style={{ objectFit: 'contain' }}

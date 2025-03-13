@@ -9,7 +9,6 @@ jest.mock<{ projects: IProject[] }>('@/data/projects', () => ({
       title: 'Project 1 - Role 1',
       role: '',
       description: 'Project 1 description',
-      imageUrl: undefined,
       technologies: [
         { icon: () => <span>Icon 1</span>, name: 'Tech 1' },
         { icon: () => <span>Icon 2</span>, name: 'Tech 2' },
@@ -22,7 +21,6 @@ jest.mock<{ projects: IProject[] }>('@/data/projects', () => ({
       title: 'Project 2 - Role 2',
       role: '',
       description: 'Project 2 description',
-      imageUrl: 'https://via.placeholder.com/400x300',
       technologies: [
         { icon: () => <span>Icon 1</span>, name: 'Tech 1' },
         { icon: () => <span>Icon 2</span>, name: 'Tech 2' },

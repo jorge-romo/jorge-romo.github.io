@@ -1,3 +1,5 @@
+import { StaticImageData } from 'next/image';
+
 export type ICertificate = {
   title: string;
   description: string;
@@ -6,7 +8,7 @@ export type ICertificate = {
    */
   embed?: string;
   link?: string;
-  imageUrl: string;
+  image: string | StaticImageData;
   issuedDate?: string;
   issuer: string;
   featured?: boolean;
@@ -22,7 +24,7 @@ export const certificates: ICertificate[] = [
     embed:
       '<div data-iframe-width="150" data-iframe-height="270" data-share-badge-id="b6bb6d52-24e8-4c3a-ba77-cafd701f0207" data-share-badge-host="https://www.credly.com"></div><script type="text/javascript" async src="//cdn.credly.com/assets/utilities/embed.js"></script>',
     link: 'https://www.credly.com/badges/b6bb6d52-24e8-4c3a-ba77-cafd701f0207/public_url',
-    imageUrl:
+    image:
       'https://images.credly.com/images/1b67aaf9-670d-4c92-8d51-7ac1190f0a42/image.png',
   },
   {
@@ -34,7 +36,7 @@ export const certificates: ICertificate[] = [
     embed:
       '<div data-iframe-width="150" data-iframe-height="270" data-share-badge-id="09159688-f177-4229-b690-aa1877cc5156" data-share-badge-host="https://www.credly.com"></div><script type="text/javascript" async src="//cdn.credly.com/assets/utilities/embed.js"></script>',
     link: 'https://www.credly.com/badges/09159688-f177-4229-b690-aa1877cc5156/public_url',
-    imageUrl:
+    image:
       'https://images.credly.com/images/e91ed0b0-842b-417f-8d2f-b07535febdda/image.png',
     featured: true,
   },
@@ -46,7 +48,7 @@ export const certificates: ICertificate[] = [
     title: 'Web Development with HTML, CSS, JavaScript Essentials',
     embed: '',
     link: '',
-    imageUrl:
+    image:
       'https://images.credly.com/images/2d1797d5-1de7-4778-8975-9e5c6ec73a1a/image.png',
   },
   {
@@ -57,7 +59,7 @@ export const certificates: ICertificate[] = [
     title: 'Cloud Native, DevOps, Agile & NoSQL Essentials',
     embed: '',
     link: '',
-    imageUrl:
+    image:
       'https://images.credly.com/images/0180c9c4-1723-4e5d-b38e-c439cd445130/image.png',
   },
 ];
