@@ -12,12 +12,10 @@ const Footer: React.FC = () => {
           <div className="flex flex-wrap items-center justify-center gap-4">
             {config.technologies.map((tech, index) => (
               <div key={index} title={tech.name}>
-                {React.createElement(
-                  tech.icon as React.ComponentType<{ className: string }>,
-                  {
-                    className: 'w-6 h-6 text-secondary dark:text-zinc-300',
-                  },
-                )}
+                {React.createElement(tech.icon, {
+                  className: 'w-6 h-6 text-secondary dark:text-zinc-300',
+                  'aria-hidden': 'true',
+                })}
               </div>
             ))}
           </div>
@@ -39,7 +37,7 @@ const Footer: React.FC = () => {
               className="flex items-center gap-2 text-sm text-zinc-600 transition-colors hover:text-zinc-900 dark:text-zinc-300 dark:hover:text-white"
               title="GitHub Repository"
             >
-              <FaGithub className="h-5 w-5" />
+              <FaGithub className="h-5 w-5" aria-hidden="true" />
               <span>GitHub</span>
             </a>
           </div>

@@ -4,8 +4,9 @@ import Image from 'next/image';
 import React, { HTMLAttributes, HTMLElementType } from 'react';
 import clsx from 'clsx';
 import type { ICertificate } from '@/data';
+import { Button } from '@/components/ui';
 
-export interface CertificateCardProps<AsTarget>
+export interface CertificateCardProps<AsTarget extends HTMLElementType = 'div'>
   extends HTMLAttributes<AsTarget> {
   as?: AsTarget;
   certificate: Omit<ICertificate, 'featured'>;
@@ -27,7 +28,7 @@ const CertificateCard = React.memo(
         'data-testid': 'certificate-card',
         ...rest,
         className: clsx(
-          'transition-colors-custom group relative flex items-center overflow-hidden rounded-xl border border-zinc-300 bg-white p-8 shadow-sm hover:shadow-md dark:border-zinc-600 dark:bg-zinc-800/50',
+          'transition-colors-custom group relative flex flex-col md:flex-row gap-8 items-center overflow-hidden rounded-xl border border-zinc-300 bg-white p-8 shadow-sm hover:shadow-md dark:border-zinc-600 dark:bg-zinc-800/50',
           className,
         ),
         'data-component': 'card',
@@ -41,19 +42,20 @@ const CertificateCard = React.memo(
         style={{ objectFit: 'contain' }}
         alt={title}
       />,
-      <div className="flex-1 pl-8">
+      <div className="flex-1">
         <h3 className="mb-4 text-2xl font-medium text-primary-dark dark:text-zinc-50">
           {title}
         </h3>
         {link ? (
-          <a
+          <Button
+            as="a"
             href={link}
             target="_blank"
             rel="noopener noreferrer"
-            className="text-lg underline transition-colors hover:text-zinc-700/50 dark:text-zinc-100 dark:hover:text-zinc-200/50"
+            variant="link"
           >
             {issuer}
-          </a>
+          </Button>
         ) : (
           <p className="text-lg dark:text-zinc-100">{issuer}</p>
         )}

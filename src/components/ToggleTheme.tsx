@@ -3,6 +3,7 @@
 import React, { useEffect, useState } from 'react';
 import { Moon, Sun } from 'lucide-react';
 import { useTheme } from 'next-themes';
+import { Button } from './ui';
 
 const ToggleTheme: React.FC = () => {
   const { setTheme, resolvedTheme } = useTheme();
@@ -19,17 +20,13 @@ const ToggleTheme: React.FC = () => {
   if (!mounted) return null;
 
   return (
-    <button
-      onClick={toggleTheme}
-      className="p-2 text-secondary transition-colors duration-custom hover:text-primary dark:text-zinc-400 dark:hover:text-zinc-100"
-      aria-label="Toggle theme"
-    >
+    <Button variant="text" onClick={toggleTheme} aria-label="Toggle theme">
       {resolvedTheme === 'dark' ? (
         <Sun className="h-5 w-5" />
       ) : (
         <Moon className="h-5 w-5" />
       )}
-    </button>
+    </Button>
   );
 };
 

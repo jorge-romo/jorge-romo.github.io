@@ -9,6 +9,7 @@ import NavMenu from '@/components/NavMenu';
 import MobileMenu from '@/components/MobileMenu';
 import ToggleTheme from '@/components/ToggleTheme';
 import DownloadResumeButton from '@/components/DownloadResumeButton';
+import { Button } from '@/components/ui';
 import logoImg from '@/assets/images/logo.png';
 
 const Header: React.FC = () => {
@@ -44,13 +45,13 @@ const Header: React.FC = () => {
         <div className="flex items-center gap-4 md:hidden">
           <DownloadResumeButton />
           <ToggleTheme />
-          <button
+          <Button
+            variant="text"
             onClick={() => setIsMobileMenuOpen(true)}
-            className="transition-colors-custom text-secondary hover:text-primary dark:text-zinc-400 dark:hover:text-zinc-100"
             aria-label="Open menu"
           >
             <Menu className="h-6 w-6" />
-          </button>
+          </Button>
         </div>
       </nav>
 

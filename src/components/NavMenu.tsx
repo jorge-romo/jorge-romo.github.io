@@ -1,4 +1,5 @@
 import React from 'react';
+import { Button } from '@/components/ui';
 import Link from 'next/link';
 
 const defaultNavItems = [
@@ -20,7 +21,8 @@ const NavMenu: React.FC<NavMenuProps> = ({
   isMobile = false,
   onItemClick,
 }) => {
-  const mobileClasses = 'mobile-menu-class block md:hidden py-4 px-4';
+  const mobileClasses =
+    'mobile-menu-class flex flex-col gap-4 md:hidden py-4 px-4';
   const desktopClasses = 'hidden md:flex items-center space-x-6';
 
   return (
@@ -29,16 +31,15 @@ const NavMenu: React.FC<NavMenuProps> = ({
       className={isMobile ? mobileClasses : desktopClasses}
     >
       {navItems.map(({ label, href }) => (
-        <Link
+        <Button
+          as={Link}
           key={label}
           href={href}
-          className={`${
-            isMobile ? 'block py-2' : 'text-secondary hover:text-primary'
-          } transition-colors duration-custom dark:text-zinc-400 dark:hover:text-zinc-100`}
+          variant="text"
           onClick={onItemClick}
         >
           {label}
-        </Link>
+        </Button>
       ))}
     </div>
   );

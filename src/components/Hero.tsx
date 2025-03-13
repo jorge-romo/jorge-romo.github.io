@@ -8,14 +8,16 @@ const Hero: React.FC = () => {
     <section
       id="home"
       data-testid="hero"
-      className="transition-colors-custom flex min-h-screen items-center justify-center bg-white py-20 dark:bg-zinc-800"
+      className="transition-colors-custom flex min-h-screen items-center bg-white py-20 dark:bg-zinc-800"
     >
-      <div className="flex flex-col items-center gap-12 md:flex-row md:items-start">
-        <HeroImage />
+      <div className="container mx-auto flex justify-center px-4">
+        <div className="flex flex-col items-center gap-12 md:flex-row md:items-start">
+          <HeroImage />
 
-        <div className="flex flex-1 flex-col items-center gap-6 text-center md:items-start md:text-left">
-          <HeroIntro />
-          <HeroSocialLinks />
+          <div className="flex flex-1 flex-col items-center gap-6 text-center md:items-start md:text-left">
+            <HeroIntro />
+            <HeroSocialLinks />
+          </div>
         </div>
       </div>
     </section>

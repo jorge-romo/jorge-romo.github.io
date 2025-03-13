@@ -16,7 +16,7 @@
   --dark-400: #9ca3af; /* zinc-400 */
   --dark-900: #18181b; /* zinc-900 */
 
-  --duration-custom: 600ms;
+  --duration-custom: 500ms;
 }
 
 .dark {
