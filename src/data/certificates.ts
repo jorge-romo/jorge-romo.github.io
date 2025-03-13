@@ -1,6 +1,9 @@
-export type ICertification = {
+export type ICertificate = {
   title: string;
   description: string;
+  /**
+   * @deprecated Not supported
+   */
   embed?: string;
   link?: string;
   imageUrl: string;
@@ -9,7 +12,7 @@ export type ICertification = {
   featured?: boolean;
 };
 
-export const certificates: ICertification[] = [
+export const certificates: ICertificate[] = [
   {
     issuedDate: '',
     issuer: 'Issued by Coursera and authorized by IBM',

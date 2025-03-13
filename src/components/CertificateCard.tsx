@@ -3,20 +3,20 @@
 import Image from 'next/image';
 import React, { HTMLAttributes, HTMLElementType } from 'react';
 import clsx from 'clsx';
-import type { ICertification } from '@/data';
+import type { ICertificate } from '@/data';
 
-export interface CertificationCardProps<AsTarget>
+export interface CertificateCardProps<AsTarget>
   extends HTMLAttributes<AsTarget> {
   as?: AsTarget;
-  certification: Omit<ICertification, 'featured'>;
+  certificate: Omit<ICertificate, 'featured'>;
 }
-const CertificationCard = React.memo(
+const CertificateCard = React.memo(
   <AsTarget extends HTMLElementType = 'div'>(
-    props: CertificationCardProps<AsTarget>,
+    props: CertificateCardProps<AsTarget>,
   ) => {
     const {
       as = 'div',
-      certification: { imageUrl, title, description, issuer, link, issuedDate },
+      certificate: { imageUrl, title, description, issuer, link, issuedDate },
       className,
       ...rest
     } = props;
@@ -24,7 +24,7 @@ const CertificationCard = React.memo(
     const element = React.createElement(
       as,
       {
-        'data-testid': 'project-card',
+        'data-testid': 'certificate-card',
         ...rest,
         className: clsx(
           'transition-colors-custom group relative flex items-center overflow-hidden rounded-xl border border-zinc-300 bg-white p-8 shadow-sm hover:shadow-md dark:border-zinc-600 dark:bg-zinc-800/50',
@@ -45,16 +45,22 @@ const CertificationCard = React.memo(
         <h3 className="mb-4 text-2xl font-medium text-primary-dark dark:text-zinc-50">
           {title}
         </h3>
-        <a
-          href={link}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="text-lg underline transition-colors hover:text-zinc-700/50 dark:text-zinc-100 dark:hover:text-zinc-200/50"
-        >
-          {issuer}
-        </a>
+        {link ? (
+          <a
+            href={link}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-lg underline transition-colors hover:text-zinc-700/50 dark:text-zinc-100 dark:hover:text-zinc-200/50"
+          >
+            {issuer}
+          </a>
+        ) : (
+          <p className="text-lg dark:text-zinc-100">{issuer}</p>
+        )}
         {issuedDate && (
-          <p className="mt-2 text-lg dark:text-zinc-100">At {issuedDate}</p>
+          <p className="mt-2 text-lg dark:text-zinc-100">
+            At <span>{issuedDate}</span>
+          </p>
         )}
         <p className="mt-4 text-secondary dark:text-zinc-300">{description}</p>
       </div>,
@@ -63,6 +69,6 @@ const CertificationCard = React.memo(
     return element;
   },
 );
-CertificationCard.displayName = 'CertificationCard';
+CertificateCard.displayName = 'CertificateCard';
 
-export default CertificationCard;
+export default CertificateCard;

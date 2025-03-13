@@ -1,5 +1,5 @@
 import React from 'react';
-import CertificateCard from '@/components/CertificationCard';
+import CertificateCard from '@/components/CertificateCard';
 import { certificates as _certificates } from '@/data';
 
 const certificates = [..._certificates];
@@ -24,10 +24,10 @@ const Certificates: React.FC = () => {
         </h2>
         <ul className="mx-auto flex max-w-6xl flex-col items-center gap-8">
           {featuredCertificate && (
-            <CertificateCard as="li" certification={featuredCertificate} />
+            <CertificateCard as="li" certificate={featuredCertificate} />
           )}
           {certificates.map((certificate, index) => (
-            <CertificateCard as="li" key={index} certification={certificate} />
+            <CertificateCard as="li" key={index} certificate={certificate} />
           ))}
         </ul>
       </div>
