@@ -1,16 +1,16 @@
 import React from 'react';
 import { FaGithub } from 'react-icons/fa';
-import { personalInfo, aboutThisProject } from '@/data';
+import { personalInfo, config } from '@/data';
 
 const Footer: React.FC = () => {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="transition-colors-custom border-t border-zinc-100 bg-white py-8 dark:border-zinc-700/50 dark:bg-zinc-800">
+    <footer className="transition-colors-custom border-t border-zinc-300 bg-zinc-100 py-8 dark:border-zinc-600 dark:bg-zinc-900">
       <div className="container mx-auto px-4">
         <div className="mx-auto max-w-5xl">
           <div className="flex flex-wrap items-center justify-center gap-4">
-            {aboutThisProject.technoligies.map((tech, index) => (
+            {config.technologies.map((tech, index) => (
               <div key={index} title={tech.name}>
                 {React.createElement(
                   tech.icon as React.ComponentType<{ className: string }>,
@@ -34,7 +34,7 @@ const Footer: React.FC = () => {
             <span className="hidden md:inline">•</span>
 
             <a
-              href={aboutThisProject.repo}
+              href={config.repo}
               rel="noopener noreferrer"
               className="flex items-center gap-2 text-sm text-zinc-600 transition-colors hover:text-zinc-900 dark:text-zinc-300 dark:hover:text-white"
               title="GitHub Repository"

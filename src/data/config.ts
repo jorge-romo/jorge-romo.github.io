@@ -9,8 +9,22 @@ import {
   SiTypescript,
 } from 'react-icons/si';
 import { personalInfo } from './personal';
+import { IconType } from 'react-icons';
 
-export const aboutThisProject = {
+export type IConfig = {
+  title: string;
+  description: {
+    long: string;
+    short: string;
+  };
+  url: string;
+  repo: string;
+  technologies: { name: string; icon: IconType };
+  keywords: string[];
+  screenshot: { url: string; width: number; height: number };
+};
+
+export const config = {
   title: `${personalInfo.title} | ${personalInfo.name}`,
   description: {
     long: `Explore the portfolio of ${personalInfo.name}, a creative front-end developer expertise in building dynamic, responsive, and user-friendly web applications. Discover the portfolio of a skilled frontend developer specializing in React and Angular.`,
@@ -18,7 +32,7 @@ export const aboutThisProject = {
   },
   url: 'https://jorge-romo.github.io',
   repo: 'https://github.com/jorge-romo/jorge-romo.github.io',
-  technoligies: [
+  technologies: [
     { name: 'React', icon: SiReact },
     { name: 'Next.js', icon: SiNextdotjs },
     { name: 'TypeScript', icon: SiTypescript },

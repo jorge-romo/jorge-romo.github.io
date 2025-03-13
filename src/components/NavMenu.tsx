@@ -1,12 +1,6 @@
 import React from 'react';
 import Link from 'next/link';
 
-interface NavMenuProps {
-  navItems?: { href: string; label: string }[];
-  isMobile?: boolean;
-  onItemClick?: () => void;
-}
-
 const defaultNavItems = [
   { href: '/#home', label: 'Home' },
   { href: '/#about', label: 'About' },
@@ -14,6 +8,12 @@ const defaultNavItems = [
   { href: '/#skills', label: 'Skills' },
   { href: '/#contact', label: 'Contact' },
 ];
+
+export interface NavMenuProps {
+  navItems?: { href: string; label: string }[];
+  isMobile?: boolean;
+  onItemClick?: () => void;
+}
 
 const NavMenu: React.FC<NavMenuProps> = ({
   navItems = defaultNavItems,

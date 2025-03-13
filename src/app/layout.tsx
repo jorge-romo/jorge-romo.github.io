@@ -6,37 +6,49 @@ import './globals.css';
 import ThemeProvider from '@/components/ThemeProvider';
 import Footer from '@/components/Footer';
 import ScrollToTopButton from '@/components/ScrollToTopButton';
-import { aboutThisProject, personalInfo } from '@/data';
+import { config, personalInfo } from '@/data';
 
 const inter = Inter({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
-  title: aboutThisProject.title,
-  description: aboutThisProject.description.long,
+  metadataBase: new URL(config.url),
+  title: config.title,
+  description: config.description.long,
   authors: [{ name: personalInfo.name }],
   openGraph: {
-    title: aboutThisProject.title,
-    description: aboutThisProject.description.short,
-    url: aboutThisProject.url,
+    title: config.title,
+    description: config.description.short,
+    url: config.url,
     images: [
       {
-        url: aboutThisProject.screenshot.url,
-        width: aboutThisProject.screenshot.width,
-        height: aboutThisProject.screenshot.height,
+        url: config.screenshot.url,
+        width: config.screenshot.width,
+        height: config.screenshot.height,
         alt: 'Portfolio preview',
       },
     ],
+    locale: 'en_US',
     type: 'website',
   },
   twitter: {
     card: 'summary_large_image',
-    title: aboutThisProject.title,
-    description: aboutThisProject.description.short,
-    images: [aboutThisProject.screenshot.url],
+    title: config.title,
+    description: config.description.short,
+    images: [config.screenshot.url],
+    creator: '@jorge33680',
   },
   robots: {
     index: true,
     follow: true,
+    nocache: false,
+    googleBot: {
+      index: true,
+      follow: true,
+      noimageindex: false,
+      'max-video-preview': -1,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+    },
   },
 };
 

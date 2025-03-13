@@ -1,9 +1,15 @@
-jest.mock('@/data/projects', () => ({
+import React from 'react';
+import { render, screen, getByText, getByRole } from '@testing-library/react';
+import Projects from '@/components/Projects';
+import { IProject, projects } from '@/data/projects';
+
+jest.mock<{ projects: IProject[] }>('@/data/projects', () => ({
   projects: [
     {
       title: 'Project 1 - Role 1',
+      role: '',
       description: 'Project 1 description',
-      image: null,
+      imageUrl: undefined,
       technologies: [
         { icon: () => <span>Icon 1</span>, name: 'Tech 1' },
         { icon: () => <span>Icon 2</span>, name: 'Tech 2' },
@@ -14,8 +20,9 @@ jest.mock('@/data/projects', () => ({
     },
     {
       title: 'Project 2 - Role 2',
+      role: '',
       description: 'Project 2 description',
-      image: 'https://via.placeholder.com/400x300',
+      imageUrl: 'https://via.placeholder.com/400x300',
       technologies: [
         { icon: () => <span>Icon 1</span>, name: 'Tech 1' },
         { icon: () => <span>Icon 2</span>, name: 'Tech 2' },
@@ -26,17 +33,6 @@ jest.mock('@/data/projects', () => ({
     },
   ],
 }));
-
-import React from 'react';
-import {
-  render,
-  screen,
-  queryHelpers,
-  getByText,
-  getByRole,
-} from '@testing-library/react';
-import Projects from '@/components/Projects';
-import { projects } from '@/data/projects';
 
 describe('Projects Component', () => {
   it('renders the section title', () => {
@@ -53,11 +49,7 @@ describe('Projects Component', () => {
   it('renders the project', () => {
     const { container } = render(<Projects />);
     const queryByProjectName = (projectName: string) =>
-      queryHelpers.queryByAttribute(
-        'data-project-name',
-        container,
-        projectName,
-      );
+      getByText(container, projectName).closest('li');
 
     projects.forEach((project) => {
       expect(screen.getByText(project.title)).toBeInTheDocument();

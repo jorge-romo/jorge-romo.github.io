@@ -1,4 +1,5 @@
 import { PlayCircle } from 'lucide-react';
+import type { IconType } from 'react-icons';
 import {
   SiAngular,
   SiGit,
@@ -16,7 +17,12 @@ import {
   SiTypescript,
 } from 'react-icons/si';
 
-export const skills = [
+export type ISkill = {
+  icon: IconType;
+  name: string;
+};
+
+export const skills: ISkill[] = [
   { name: 'React', icon: SiReact },
   { name: 'Next.js', icon: SiNextdotjs },
   { name: 'Angular', icon: SiAngular },

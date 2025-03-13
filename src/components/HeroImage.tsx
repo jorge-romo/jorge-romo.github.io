@@ -16,14 +16,15 @@ const HeroImage: React.FC = () => {
             src={personalInfo.photo}
             alt="Profile"
             fill
+            sizes="180px"
+            className="relative rounded-full ring-1 ring-zinc-100 dark:ring-zinc-700"
             style={{ objectFit: 'cover' }}
-            className="rounded-full ring-1 ring-zinc-100 dark:ring-zinc-700"
           />
         </div>
       </div>
 
-      <div className="absolute -bottom-2 -right-2 h-3 w-3 rounded-full bg-zinc-200/80 dark:bg-zinc-600/50" />
-      <div className="absolute -left-2 -top-2 h-4 w-4 rounded-full bg-zinc-100/80 dark:bg-zinc-700/50" />
+      <div className="absolute -bottom-2 -right-2 h-3 w-3 rounded-full bg-zinc-300/80 dark:bg-zinc-500/80" />
+      <div className="absolute -left-2 -top-2 h-4 w-4 rounded-full bg-zinc-400/80 dark:bg-zinc-600/80" />
     </div>
   );
 };

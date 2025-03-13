@@ -10,10 +10,12 @@ import {
 } from 'react-icons/fa';
 import { getYears } from '@/utilities';
 
-export const personalInterests: {
+export type IPersonalInterest = {
   icon: IconType;
   label: string;
-}[] = [
+};
+
+export const personalInterests: IPersonalInterest[] = [
   { icon: Coffee, label: 'Coffee' },
   { icon: Music, label: 'Music' },
   { icon: Book, label: 'Book' },
@@ -22,7 +24,17 @@ export const personalInterests: {
   { icon: Users, label: 'Family Time' },
 ];
 
-export const personalInfo = {
+export type IPersonalInfo = {
+  photo: string;
+  resume: string;
+  name: string;
+  title: string;
+  bio: string;
+  summary: string;
+  from: string;
+};
+
+export const personalInfo: IPersonalInfo = {
   photo: '/images/profile.png',
   resume: '/pdfs/Resume.pdf',
   name: 'Jorge Romo',
@@ -32,7 +44,13 @@ export const personalInfo = {
   from: '2018-09',
 };
 
-export const socialLinks = [
+export type ISocialLink = {
+  name: string;
+  href: string;
+  icon: IconType;
+};
+
+export const socialLinks: ISocialLink[] = [
   {
     name: 'LinkedIn',
     href: 'https://www.linkedin.com/in/jorge-romo-50261b240',
@@ -55,7 +73,12 @@ export const socialLinks = [
   },
 ];
 
-export const contactInfo = {
+export type IContactInformation = {
+  phone?: string;
+  email: string;
+};
+
+export const contactInfo: IContactInformation = {
   phone: '',
   email: 'romo.jorge126@gmail.com',
 };

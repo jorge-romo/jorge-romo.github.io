@@ -8,7 +8,7 @@ const Hero: React.FC = () => {
     <section
       id="home"
       data-testid="hero"
-      className="transition-colors-custom flex min-h-screen items-center justify-center bg-white pt-16 dark:bg-zinc-900/95"
+      className="transition-colors-custom flex min-h-screen items-center justify-center bg-white py-20 dark:bg-zinc-800"
     >
       <div className="flex flex-col items-center gap-12 md:flex-row md:items-start">
         <HeroImage />

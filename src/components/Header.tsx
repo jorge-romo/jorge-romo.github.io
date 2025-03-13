@@ -16,7 +16,7 @@ const Header: React.FC = () => {
 
   return (
     <header
-      className={`transition-colors-custom fixed top-0 z-50 w-full border-b border-zinc-100 bg-white shadow-sm dark:border-zinc-800 dark:bg-zinc-900 ${
+      className={`transition-colors-custom fixed top-0 z-50 w-full border-b border-zinc-300 bg-zinc-100 shadow-sm dark:border-zinc-600 dark:bg-zinc-900 ${
         resolvedTheme === 'dark' ? 'dark' : ''
       }`}
     >

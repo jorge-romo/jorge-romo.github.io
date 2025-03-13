@@ -30,11 +30,11 @@ const About: React.FC = () => {
             <h3 className="mb-16 mt-8 text-center text-xl font-medium text-primary-dark dark:text-zinc-50">
               When I&apos;m Not Coding
             </h3>
-            <div className="grid grid-cols-3 gap-5 md:grid-cols-6">
+            <ul className="grid grid-cols-3 gap-5 md:grid-cols-6">
               {personalInterests.map((interest, index) => (
-                <div
+                <li
                   key={index}
-                  className="group flex flex-col items-center rounded-lg bg-zinc-50 p-5 transition-all duration-custom hover:-translate-y-1 hover:bg-zinc-100 dark:bg-zinc-700/30 dark:hover:bg-zinc-700/50"
+                  className="group flex flex-col items-center rounded-lg bg-zinc-50 p-5 transition-all duration-custom hover:-translate-y-1 hover:bg-zinc-200/50 dark:bg-zinc-700/30 dark:hover:bg-zinc-700/50"
                 >
                   <span className="mb-3 text-secondary transition-transform duration-300 group-hover:scale-110 dark:text-zinc-300">
                     {React.createElement(interest.icon, {
@@ -44,9 +44,9 @@ const About: React.FC = () => {
                   <span className="text-center text-sm text-primary-dark dark:text-zinc-100">
                     {interest.label}
                   </span>
-                </div>
+                </li>
               ))}
-            </div>
+            </ul>
           </div>
         </div>
       </div>
