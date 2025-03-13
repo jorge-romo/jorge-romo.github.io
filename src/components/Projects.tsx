@@ -14,39 +14,30 @@ const Projects: React.FC = () => {
     <section
       id="projects"
       data-testid="projects-section"
-      className="transition-colors-custom bg-zinc-50 py-20 dark:bg-zinc-900/95"
+      className="transition-colors-custom bg-white py-20 dark:bg-zinc-800"
     >
       <div className="container mx-auto px-4">
         <h2 className="mb-16 mt-8 text-center text-3xl font-medium text-primary-dark dark:text-zinc-50">
           Projects
         </h2>
 
-        {featuredProject && (
-          <div className="mx-auto mb-20 max-w-6xl">
+        <ul className="mx-auto grid max-w-6xl gap-8 md:grid-cols-2">
+          {featuredProject && (
             <ProjectCard
-              image={featuredProject.image}
-              title={featuredProject.title}
-              description={featuredProject.description}
-              technologies={featuredProject.technologies}
-              github={featuredProject.github}
-              website={featuredProject.website}
+              as="li"
+              project={featuredProject}
+              className="col-span-2"
             />
-          </div>
-        )}
-
-        <div className="mx-auto grid max-w-6xl gap-8 md:grid-cols-2">
+          )}
           {projects.map((project, index) => (
             <ProjectCard
+              as="li"
               key={index}
-              image={project?.image}
-              title={project.title}
-              description={project.description}
-              technologies={project.technologies}
-              github={project.github}
-              website={project.website}
+              project={project}
+              data-sub-testid=""
             />
           ))}
-        </div>
+        </ul>
       </div>
     </section>
   );

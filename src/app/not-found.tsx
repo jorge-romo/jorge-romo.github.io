@@ -2,7 +2,7 @@ import React from 'react';
 
 const NotFound: React.FC = () => {
   return (
-    <div className="transition-colors-custom flex min-h-screen min-w-full flex-wrap items-center justify-center bg-white pt-16 dark:bg-zinc-900/95">
+    <div className="transition-colors-custom flex min-h-screen min-w-full flex-wrap items-center justify-center bg-white pt-16 dark:bg-zinc-800">
       <h1 className="mr-4 text-xl font-bold leading-10 text-primary-dark dark:text-zinc-50">
         404
       </h1>

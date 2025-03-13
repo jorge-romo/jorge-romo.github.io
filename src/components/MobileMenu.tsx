@@ -3,7 +3,7 @@ import { AnimatePresence, motion, PanInfo } from 'framer-motion';
 import { ChevronUp, X } from 'lucide-react';
 import NavMenu from './NavMenu';
 
-interface MobileMenuProps {
+export interface MobileMenuProps {
   isMobileMenuOpen: boolean;
   setIsMobileMenuOpen: React.Dispatch<React.SetStateAction<boolean>>;
   navItems?: { href: string; label: string }[];

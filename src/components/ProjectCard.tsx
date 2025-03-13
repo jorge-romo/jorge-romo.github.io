@@ -1,18 +1,13 @@
 import Image from 'next/image';
-import React from 'react';
+import React, { HTMLAttributes, HTMLElementType } from 'react';
 import { FaGithub, FaExternalLinkAlt } from 'react-icons/fa';
 import { ImageIcon } from 'lucide-react';
+import type { IProject } from '@/data';
+import clsx from 'clsx';
 
-interface ProjectCardProps {
-  image?: string | null;
-  title: string;
-  description: string;
-  technologies: {
-    icon: React.ComponentType<{ className: string }>;
-    name: string;
-  }[];
-  github: string;
-  website: string;
+export interface ProjectCardProps<AsTarget> extends HTMLAttributes<AsTarget> {
+  as?: AsTarget;
+  project: IProject;
 }
 
 const ImagePlaceholder = ({ className = '' }: { className?: string }) => (
@@ -35,25 +30,34 @@ const ImagePlaceholder = ({ className = '' }: { className?: string }) => (
   </div>
 );
 
-const ProjectCard: React.FC<ProjectCardProps> = ({
-  image,
-  title,
-  description,
-  technologies,
-  github,
-  website,
-}) => {
-  return (
-    <div
-      data-testid="project-card"
-      className="transition-colors-custom group relative overflow-hidden rounded-xl border border-gray-200 bg-white shadow-sm hover:shadow-md dark:border-zinc-700 dark:bg-zinc-800/50"
-      data-project-name={title}
-    >
+const ProjectCard = React.memo(
+  <AsTarget extends HTMLElementType = 'div'>(
+    props: ProjectCardProps<AsTarget>,
+  ) => {
+    const {
+      as = 'div',
+      project: { imageUrl, title, description, technologies, github, website },
+      className,
+      ...rest
+    } = props;
+
+    const element = React.createElement(
+      as,
+      {
+        'data-testid': 'project-card',
+        ...rest,
+        className: clsx(
+          'transition-colors-custom group relative overflow-hidden rounded-xl border border-zinc-300 bg-zinc-100 shadow-sm hover:shadow-md dark:border-zinc-600 dark:bg-zinc-900/50',
+          className,
+        ),
+        'data-component': 'card',
+      },
+
       <div className="relative aspect-video overflow-hidden">
-        {image ? (
+        {imageUrl ? (
           <Image
             className="transition-transform duration-500 group-hover:scale-105"
-            src={image}
+            src={imageUrl}
             alt={title}
             fill
             style={{ objectFit: 'contain' }}
@@ -61,14 +65,13 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
         ) : (
           <ImagePlaceholder />
         )}
-      </div>
+      </div>,
 
       <div className="p-8">
         <h3 className="mb-4 text-2xl font-medium text-primary-dark dark:text-zinc-50">
           {title}
         </h3>
         <p className="mb-6 text-secondary dark:text-zinc-300">{description}</p>
-
         <div className="mb-6 flex flex-wrap items-center gap-4">
           {technologies.map((tech, index) => (
             <div key={index} className="flex items-center gap-1">
@@ -82,7 +85,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
             </div>
           ))}
         </div>
-
+        ,
         <div className="flex gap-4">
           {!!github && (
             <a
@@ -108,9 +111,12 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
             </a>
           )}
         </div>
-      </div>
-    </div>
-  );
-};
+      </div>,
+    );
+    return element;
+  },
+);
+
+ProjectCard.displayName = 'ProjectCard';
 
 export default ProjectCard;
