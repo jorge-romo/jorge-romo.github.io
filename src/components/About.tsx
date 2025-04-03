@@ -11,14 +11,14 @@ const About: React.FC = () => {
       <div className="container mx-auto px-4">
         <div className="mx-auto max-w-6xl">
           <div className="prose dark:prose-dark mb-16">
-            <h2 className="mb-16 mt-8 text-center text-3xl font-medium text-primary-dark dark:text-zinc-50">
+            <h2 className="mb-16 mt-8 text-center text-3xl font-medium text-primary-dark dark:text-primary-light">
               About Me
             </h2>
             <div className="space-y-4">
               {personalInfo.summary.split('\n').map((paragraph, index) => (
                 <p
                   key={index}
-                  className="text-lg leading-relaxed text-secondary dark:text-zinc-300"
+                  className="text-lg leading-relaxed text-secondary dark:text-secondary-light"
                 >
                   {paragraph}
                 </p>
@@ -27,7 +27,7 @@ const About: React.FC = () => {
           </div>
 
           <div className="prose dark:prose-dark mb-16">
-            <h3 className="mb-16 mt-8 text-center text-xl font-medium text-primary-dark dark:text-zinc-50">
+            <h3 className="mb-16 mt-8 text-center text-xl font-medium text-primary-dark dark:text-primary-light">
               When I&apos;m Not Coding
             </h3>
             <ul className="grid grid-cols-3 gap-5 md:grid-cols-6">

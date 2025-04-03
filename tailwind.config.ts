@@ -10,17 +10,18 @@ const config: Config = {
   theme: {
     extend: {
       transitionDuration: {
-        custom: '700ms',
+        custom: '500ms',
       },
       colors: {
         primary: {
-          DEFAULT: '#18181b',
-          light: '#27272a',
-          dark: '#09090b',
+          DEFAULT: '#030712',
+          light: '#f9fafb',
+          dark: '#030712',
         },
         secondary: {
-          DEFAULT: '#71717a',
-          light: '#a1a1aa',
+          DEFAULT: '#3f3f46',
+          light: '#d4d4d4',
+          dark: '#3f3f46',
         },
         background: '#fafafa',
         surface: '#ffffff',
