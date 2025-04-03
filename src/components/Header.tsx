@@ -23,7 +23,7 @@ const Header: React.FC = () => {
       }`}
     >
       <nav className="container mx-auto flex items-center justify-between px-4 py-4">
-        <Link href="#home" className="flex items-center gap-2">
+        <Link href="/#home" className="flex items-center gap-2">
           <Image
             src={logoImg}
             height={28}

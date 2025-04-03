@@ -74,15 +74,15 @@ const ProjectCard = React.memo(
         <h3 className="mb-4 text-2xl font-medium text-primary-dark dark:text-zinc-50">
           {title}
         </h3>
-        <p className="mb-6 text-secondary dark:text-zinc-300">{description}</p>
+        <p className="mb-6 text-zinc-600 dark:text-zinc-300">{description}</p>
         <div className="mb-6 flex flex-wrap items-center gap-4">
           {technologies.map((tech, index) => (
             <div key={index} className="flex items-center gap-1">
               {React.createElement(tech.icon, {
-                className: 'w-5 h-5 text-secondary dark:text-zinc-300',
+                className: 'w-5 h-5 text-zinc-600 dark:text-zinc-300',
                 'aria-hidden': 'true',
               })}
-              <span className="hidden text-sm text-secondary dark:text-zinc-300 lg:inline">
+              <span className="hidden text-sm text-zinc-600 dark:text-zinc-300 lg:inline">
                 {tech.name}
               </span>
             </div>

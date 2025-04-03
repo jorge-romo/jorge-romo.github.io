@@ -36,9 +36,9 @@ export function Button<
       className={clsx(
         'inline-flex items-center justify-center transition-colors duration-custom',
         variant === 'text' &&
-          'text-primary hover:text-secondary/80 dark:text-zinc-100 dark:hover:text-zinc-200/50',
+          'text-primary hover:text-primary/80 dark:text-zinc-100 dark:hover:text-zinc-100/50',
         variant === 'link' &&
-          'text-primary underline hover:text-secondary/80 dark:text-zinc-100 dark:hover:text-zinc-200/50',
+          'text-primary underline hover:text-primary/80 dark:text-zinc-100 dark:hover:text-zinc-100/50',
         variant === 'standard' &&
           'bg-zinc-200 text-primary hover:bg-zinc-200/50 dark:bg-zinc-700 dark:text-zinc-200 dark:hover:bg-zinc-700/50',
         variant === 'default' &&
