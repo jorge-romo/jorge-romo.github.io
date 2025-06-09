@@ -17,7 +17,15 @@ const nextConfig: NextConfig = {
       },
     ],
   },
-  
+  // Performance optimizations
+  reactStrictMode: true,
+  compiler: {
+    removeConsole: process.env.NODE_ENV === 'production',
+  },
+  experimental: {
+    optimizeCss: true,
+    optimizePackageImports: ['react-icons', 'framer-motion'],
+  },
 };
 
 module.exports = nextConfig;

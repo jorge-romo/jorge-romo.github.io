@@ -1,9 +1,9 @@
 'use client';
 
 import React, { useCallback, useEffect, useState } from 'react';
-import { ArrowUp } from 'lucide-react';
+import { LuArrowUp as ArrowUp } from 'react-icons/lu';
 import clsx from 'clsx';
-import { Button } from './ui';
+import { Button } from '.';
 
 const ScrollToTopButton: React.FC = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -14,9 +14,7 @@ const ScrollToTopButton: React.FC = () => {
 
   useEffect(() => {
     window.addEventListener('scroll', toggleVisibility);
-    return () => {
-      window.removeEventListener('scroll', toggleVisibility);
-    };
+    return () => window.removeEventListener('scroll', toggleVisibility);
   }, [toggleVisibility]);
 
   const scrollToTop = useCallback(() => {

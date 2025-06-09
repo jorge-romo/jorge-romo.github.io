@@ -1,7 +1,7 @@
 import React from 'react';
 import { render, screen, getByText, getByRole } from '@testing-library/react';
-import Projects from '@/components/Projects';
 import { IProject, projects } from '@/data/projects';
+import Projects from '../Projects';
 
 jest.mock<{ projects: IProject[] }>('@/data/projects', () => ({
   projects: [

@@ -13,7 +13,7 @@ const Footer: React.FC = () => {
             {config.technologies.map((tech, index) => (
               <div key={index} title={tech.name}>
                 {React.createElement(tech.icon, {
-                  className: 'w-6 h-6 text-secondary dark:text-zinc-300',
+                  className: 'w-6 h-6 text-zinc-600 dark:text-zinc-300',
                   'aria-hidden': 'true',
                 })}
               </div>
@@ -22,12 +22,15 @@ const Footer: React.FC = () => {
 
           <div className="my-6 w-full border-t border-zinc-300 dark:border-zinc-600"></div>
 
-          <div className="flex flex-col items-center justify-center gap-2 text-sm text-secondary dark:text-zinc-400 md:flex-row">
+          <div className="flex flex-col items-center justify-center gap-2 text-sm text-zinc-600 dark:text-zinc-400 md:flex-row">
             <span>© {currentYear} All rights reserved</span>
             <span className="hidden md:inline">•</span>
             <span>
               {' '}
-              Developed with ❤️ by <strong>{personalInfo.name}</strong>
+              Developed with ❤️ by{' '}
+              <strong className="text-zinc-800 dark:text-zinc-200">
+                {personalInfo.name}
+              </strong>
             </span>
             <span className="hidden md:inline">•</span>
 

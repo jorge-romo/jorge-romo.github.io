@@ -1,13 +1,13 @@
 import React, { useEffect } from 'react';
 import { AnimatePresence, motion, PanInfo } from 'framer-motion';
-import { ChevronUp, X } from 'lucide-react';
+import { LuChevronUp, LuX } from 'react-icons/lu';
 import { Button } from '@/components/ui';
 import NavMenu from '@/components/NavMenu';
 
 export interface MobileMenuProps {
   isMobileMenuOpen: boolean;
   setIsMobileMenuOpen: React.Dispatch<React.SetStateAction<boolean>>;
-  navItems?: { href: string; label: string }[];
+  navItems: { href: string; label: string }[];
 }
 
 const MobileMenu: React.FC<MobileMenuProps> = ({
@@ -59,18 +59,18 @@ const MobileMenu: React.FC<MobileMenuProps> = ({
             className="absolute right-4 top-4"
             aria-label="Close menu"
           >
-            <X className="h-6 w-6" />
+            <LuX className="h-6 w-6" />
           </Button>
 
           <NavMenu
             isMobile
-            onItemClick={() => {
+            onNavigate={() => {
               setIsMobileMenuOpen(false);
             }}
             navItems={navItems}
           />
           <div className="absolute inset-x-0 bottom-0 flex animate-bounce items-center justify-center">
-            <ChevronUp className="h-6 w-6 text-gray-500 dark:text-gray-400" />
+            <LuChevronUp className="h-6 w-6 text-gray-500 dark:text-gray-400" />
           </div>
         </motion.div>
       )}

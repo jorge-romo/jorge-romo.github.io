@@ -1,63 +1,67 @@
 'use client';
 
-import React, { useState } from 'react';
-import { useTheme } from 'next-themes';
+import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
-import Image from 'next/image';
-import { Menu } from 'lucide-react';
-import NavMenu from '@/components/NavMenu';
-import MobileMenu from '@/components/MobileMenu';
-import ToggleTheme from '@/components/ToggleTheme';
-import DownloadResumeButton from '@/components/DownloadResumeButton';
+import { LuMenu } from 'react-icons/lu';
 import { Button } from '@/components/ui';
-import logoImg from '@/assets/images/logo.png';
+import MobileMenu from '@/components/MobileMenu';
+import NavMenu from '@/components/NavMenu';
+
+const navItems = [
+  { href: '#about', label: 'About' },
+  { href: '#projects', label: 'Projects' },
+  { href: '#contact', label: 'Contact' },
+];
 
 const Header: React.FC = () => {
-  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-  const { resolvedTheme } = useTheme();
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const header = document.querySelector('header');
+      if (header) {
+        if (window.scrollY > 0) {
+          header.classList.add('bg-background/80', 'backdrop-blur-sm');
+        } else {
+          header.classList.remove('bg-background/80', 'backdrop-blur-sm');
+        }
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
 
   return (
-    <header
-      className={`transition-colors-custom fixed top-0 z-50 w-full border-b border-zinc-300 bg-zinc-100 shadow-sm dark:border-zinc-600 dark:bg-zinc-900 ${
-        resolvedTheme === 'dark' ? 'dark' : ''
-      }`}
-    >
-      <nav className="container mx-auto flex items-center justify-between px-4 py-4">
-        <Link href="/#home" className="flex items-center gap-2">
-          <Image
-            src={logoImg}
-            height={28}
-            width={28}
-            style={{ objectFit: 'contain' }}
-            alt="Logo"
-          />
-          <h3 className="text-xl font-medium text-primary-dark dark:text-zinc-50">
-            JR
-          </h3>
-        </Link>
-
-        <div className="hidden items-center space-x-6 md:flex">
-          <NavMenu />
-          <DownloadResumeButton />
-          <ToggleTheme />
-        </div>
-
-        <div className="flex items-center gap-4 md:hidden">
-          <DownloadResumeButton />
-          <ToggleTheme />
-          <Button
-            variant="text"
-            onClick={() => setIsMobileMenuOpen(true)}
-            aria-label="Open menu"
+    <header className="fixed top-0 z-50 w-full transition-all duration-300">
+      <div className="container mx-auto px-4">
+        <div className="flex h-16 items-center justify-between">
+          <Link
+            href="/"
+            className="text-primary-dark dark:text-primary-light text-xl font-bold"
           >
-            <Menu className="h-6 w-6" />
+            JR
+          </Link>
+
+          {/* Mobile Menu Button */}
+          <Button
+            variant="default"
+            size="sm"
+            onClick={() => setIsMenuOpen(true)}
+            aria-label="Open menu"
+            className="md:hidden"
+            rounded="full"
+          >
+            <LuMenu className="h-5 w-5" />
           </Button>
+          <NavMenu navItems={navItems} />
         </div>
-      </nav>
+      </div>
 
       <MobileMenu
-        isMobileMenuOpen={isMobileMenuOpen}
-        setIsMobileMenuOpen={setIsMobileMenuOpen}
+        isMobileMenuOpen={isMenuOpen}
+        setIsMobileMenuOpen={setIsMenuOpen}
+        navItems={navItems}
       />
     </header>
   );

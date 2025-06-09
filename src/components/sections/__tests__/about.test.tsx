@@ -1,3 +1,9 @@
+import React from 'react';
+import { render, screen } from '@testing-library/react';
+import '@testing-library/jest-dom';
+import { personalInterests } from '@/data/personal';
+import About from '../About';
+
 jest.mock('@/data/personal', () => ({
   personalInfo: {
     summary: 'Summary 1\nSummary 2',
@@ -12,12 +18,6 @@ jest.mock('@/data/personal', () => ({
     { label: 'Interest 3', icon: () => <span>Icon 3</span> },
   ],
 }));
-
-import React from 'react';
-import { render, screen } from '@testing-library/react';
-import '@testing-library/jest-dom';
-import About from '@/components/About';
-import { personalInterests } from '@/data/personal';
 
 describe('About Component', () => {
   it('renders the About component without crashing', () => {

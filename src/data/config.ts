@@ -25,10 +25,10 @@ export type IConfig = {
 };
 
 export const config = {
-  title: `${personalInfo.title} | ${personalInfo.name}`,
+  title: `Jorge Romo | Portfolio`,
   description: {
-    long: `Explore the portfolio of ${personalInfo.name}, a creative front-end developer expertise in building dynamic, responsive, and user-friendly web applications. Discover the portfolio of a skilled frontend developer specializing in React and Angular.`,
-    short: `Explore the portfolio of ${personalInfo.name}, React & Angular Specialist`,
+    long: `Personal portfolio website of Jorge Romo, showcasing projects and skills in web development.`,
+    short: `Personal portfolio website of Jorge Romo, showcasing projects and skills in web development.`,
   },
   url: 'https://jorge-romo.github.io',
   repo: 'https://github.com/jorge-romo/jorge-romo.github.io',

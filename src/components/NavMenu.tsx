@@ -1,47 +1,39 @@
 import React from 'react';
-import { Button } from '@/components/ui';
 import Link from 'next/link';
-
-const defaultNavItems = [
-  { href: '/#home', label: 'Home' },
-  { href: '/#about', label: 'About' },
-  { href: '/#projects', label: 'Projects' },
-  { href: '/#skills', label: 'Skills' },
-  { href: '/#contact', label: 'Contact' },
-];
+import { ToggleTheme } from '@/components/ui';
 
 export interface NavMenuProps {
-  navItems?: { href: string; label: string }[];
+  navItems: { href: string; label: string }[];
   isMobile?: boolean;
-  onItemClick?: () => void;
+  onNavigate?: (event: { preventDefault: () => void }) => void;
 }
 
 const NavMenu: React.FC<NavMenuProps> = ({
-  navItems = defaultNavItems,
+  navItems,
   isMobile = false,
-  onItemClick,
+  onNavigate,
 }) => {
   const mobileClasses =
     'mobile-menu-class flex flex-col gap-4 md:hidden py-4 px-4';
-  const desktopClasses = 'hidden md:flex items-center space-x-6';
+  const desktopClasses = 'hidden items-center gap-6 md:flex';
 
   return (
-    <div
+    <nav
       data-testid="nav-menu"
       className={isMobile ? mobileClasses : desktopClasses}
     >
-      {navItems.map(({ label, href }) => (
-        <Button
-          as={Link}
-          key={label}
-          href={href}
-          variant="text"
-          onClick={onItemClick}
+      {navItems.map((item) => (
+        <Link
+          key={item.href}
+          href={item.href}
+          onNavigate={onNavigate}
+          className="text-primary-dark text-sm font-medium transition-colors hover:text-primary/80 dark:text-zinc-100 dark:hover:text-zinc-100/80"
         >
-          {label}
-        </Button>
+          {item.label}
+        </Link>
       ))}
-    </div>
+      <ToggleTheme />
+    </nav>
   );
 };
 

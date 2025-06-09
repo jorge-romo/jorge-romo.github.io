@@ -1,14 +1,14 @@
 import React from 'react';
 import type { Metadata } from 'next';
-import { Inter } from 'next/font/google';
+// import { Inter } from 'next/font/google';
 import Header from '@/components/Header';
 import './globals.css';
-import ThemeProvider from '@/components/ThemeProvider';
 import Footer from '@/components/Footer';
-import ScrollToTopButton from '@/components/ScrollToTopButton';
+import ThemeProvider from '@/components/ui/ThemeProvider';
+import ScrollToTopButton from '@/components/ui/ScrollToTopButton';
 import { config, personalInfo } from '@/data';
 
-const inter = Inter({ subsets: ['latin'] });
+// const inter = Inter({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
   metadataBase: new URL(config.url),
@@ -58,9 +58,15 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en-US">
-      <body className={`${inter.className} text-dark min-h-screen`}>
-        <ThemeProvider attribute="class">
+    <html lang="en" suppressHydrationWarning>
+      <body>
+        {/* <body className={inter.className}> */}
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="system"
+          enableSystem
+          disableTransitionOnChange
+        >
           <Header />
           <main>{children}</main>
           <Footer />

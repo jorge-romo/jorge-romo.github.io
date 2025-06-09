@@ -61,7 +61,7 @@ const config = [
     },
 
     rules: {
-      'no-unused-vars': 'warn',
+      'no-unused-vars': 'off',
       'object-shorthand': 'warn',
       'quote-props': ['warn', 'as-needed'],
 
@@ -79,6 +79,8 @@ const config = [
           objectLiteralTypeAssertions: 'never',
         },
       ],
+
+      '@typescript-eslint/no-unused-vars': ['error', { argsIgnorePattern: '^_', caughtErrorsIgnorePattern: '^_' }],
 
       'react/jsx-fragments': ['warn', 'syntax'],
 

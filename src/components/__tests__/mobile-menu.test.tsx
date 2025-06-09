@@ -1,6 +1,6 @@
 import { fireEvent, render, screen } from '@testing-library/react';
-import MobileMenu from '@/components/MobileMenu';
 import { motion } from 'framer-motion';
+import MobileMenu from '../MobileMenu';
 
 const navItemsMock = [
   { href: '/home', label: 'Home' },

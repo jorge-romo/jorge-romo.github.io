@@ -34,7 +34,7 @@ export function Button<
     <AsElement
       {...rest}
       className={clsx(
-        'inline-flex items-center justify-center transition-colors duration-custom',
+        'duration-custom inline-flex items-center justify-center transition-colors',
         variant === 'text' &&
           'text-primary hover:text-primary/80 dark:text-zinc-100 dark:hover:text-zinc-100/50',
         variant === 'link' &&
