@@ -2,6 +2,8 @@
 @tailwind components;
 @tailwind utilities;
 
+@import '@fontsource/raleway/index.css';
+
 @layer base {
   :root {
     --background: 0 0% 100%;
@@ -54,14 +56,14 @@
     @apply border-border;
   }
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background font-sans text-foreground;
   }
 }
 
 body {
   background-color: var(--background-color);
   color: var(--text-color);
-  font-family: 'Inter', sans-serif;
+  font-family: 'Raleway', sans-serif;
 }
 
 html {

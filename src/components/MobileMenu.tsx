@@ -8,12 +8,14 @@ export interface MobileMenuProps {
   isMobileMenuOpen: boolean;
   setIsMobileMenuOpen: React.Dispatch<React.SetStateAction<boolean>>;
   navItems: { href: string; label: string }[];
+  activeId?: string | null;
 }
 
 const MobileMenu: React.FC<MobileMenuProps> = ({
   isMobileMenuOpen,
   setIsMobileMenuOpen,
   navItems,
+  activeId,
 }) => {
   const handleSwipe = (_event: PointerEvent, info: PanInfo) => {
     if (info.offset.y < -50) {
@@ -68,6 +70,7 @@ const MobileMenu: React.FC<MobileMenuProps> = ({
               setIsMobileMenuOpen(false);
             }}
             navItems={navItems}
+            activeId={activeId}
           />
           <div className="absolute inset-x-0 bottom-0 flex animate-bounce items-center justify-center">
             <LuChevronUp className="h-6 w-6 text-gray-500 dark:text-gray-400" />

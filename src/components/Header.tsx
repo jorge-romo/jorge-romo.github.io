@@ -6,15 +6,21 @@ import { LuMenu } from 'react-icons/lu';
 import { Button } from '@/components/ui';
 import MobileMenu from '@/components/MobileMenu';
 import NavMenu from '@/components/NavMenu';
+import { useScrollSpy } from './hooks/useScrollSpy';
 
 const navItems = [
+  { href: '#', label: 'Home' },
   { href: '#about', label: 'About' },
+  { href: '#experience', label: 'Experience' },
   { href: '#projects', label: 'Projects' },
   { href: '#contact', label: 'Contact' },
 ];
 
+const sectionIds = navItems.map((item) => item.href.replace('#', ''));
+
 const Header: React.FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const activeId = useScrollSpy(sectionIds, 80); // 80px offset for header height
 
   useEffect(() => {
     const handleScroll = () => {
@@ -54,7 +60,7 @@ const Header: React.FC = () => {
           >
             <LuMenu className="h-5 w-5" />
           </Button>
-          <NavMenu navItems={navItems} />
+          <NavMenu navItems={navItems} activeId={activeId} />
         </div>
       </div>
 
@@ -62,6 +68,7 @@ const Header: React.FC = () => {
         isMobileMenuOpen={isMenuOpen}
         setIsMobileMenuOpen={setIsMenuOpen}
         navItems={navItems}
+        activeId={activeId}
       />
     </header>
   );

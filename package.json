@@ -3,18 +3,19 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev",
+    "dev": "rimraf .next && next dev",
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
     "lint:fix": "next lint --fix",
     "lint:eslint": "eslint --fix",
     "lint-staged": "lint-staged",
-    "format": "prettier --write */**/*.{json,ts,tsx,css,md}",
+    "format": "prettier --write **/*.{json,ts,tsx,css,md}",
     "test": "jest",
     "prepare": "husky"
   },
   "dependencies": {
+    "@fontsource/raleway": "^5.2.6",
     "@next/env": "~15.3.0",
     "clsx": "^2.1.1",
     "date-fns": "^4.1.0",
@@ -54,6 +55,7 @@
     "lint-staged": "^15.3.0",
     "prettier": "^3.4.2",
     "prettier-plugin-tailwindcss": "^0.6.9",
+    "rimraf": "^6.0.1",
     "ts-jest": "^29.2.5",
     "ts-node": "^10.9.2",
     "typescript": "^5"

@@ -1,14 +1,11 @@
 import React from 'react';
 import type { Metadata } from 'next';
-// import { Inter } from 'next/font/google';
 import Header from '@/components/Header';
 import './globals.css';
 import Footer from '@/components/Footer';
 import ThemeProvider from '@/components/ui/ThemeProvider';
 import ScrollToTopButton from '@/components/ui/ScrollToTopButton';
 import { config, personalInfo } from '@/data';
-
-// const inter = Inter({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
   metadataBase: new URL(config.url),
@@ -60,7 +57,6 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <body>
-        {/* <body className={inter.className}> */}
         <ThemeProvider
           attribute="class"
           defaultTheme="system"

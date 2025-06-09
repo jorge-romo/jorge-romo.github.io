@@ -23,6 +23,7 @@ export type IPersonalInfo = {
   photo: string | StaticImageData;
   resume: string;
   name: string;
+  nameShort: string;
   title: string;
   bio: string;
   summary: string;
@@ -35,9 +36,10 @@ export const personalInfo: IPersonalInfo = {
   photo: profileImg,
   resume: '/pdfs/Resume.pdf',
   name: 'Jorge Manuel Romo Jr.',
+  nameShort: 'Jorge',
   title: 'Senior Full Stack Engineer',
-  bio: `A passionate Full Stack Developer specializing in building exceptional digital experiences`,
-  summary: `I specialize in developing robust full-stack applications using modern technologies like React, TypeScript, .NET Core, and Node.js, while leveraging cloud platforms such as AWS and Azure. My expertise extends to implementing serverless architectures, establishing coding standards, and fostering team growth through comprehensive documentation and mentorship.\n\nBeyond technical skills, I'm passionate about improving development processes, implementing effective peer-review systems, and ensuring high code quality through automated testing and monitoring solutions.`,
+  bio: "I'm a Senior Full Stack Engineer at Hitachi Digital Services with over 6 years of experience in developing scalable applications. My expertise spans cloud infrastructure, serverless architectures, and full-stack development. I'm passionate about creating efficient solutions that enhance application performance and user experience while maintaining high code quality standards.",
+  summary: `As a Senior Full Stack Engineer, I specialize in architecting and developing robust applications using modern technologies like React, TypeScript, .NET Core, Java, and Node.js. My experience includes implementing serverless architectures with AWS Lambda and Azure Functions, leading to significant performance improvements and reduced operational costs.\n\nI've successfully led the development of full-stack applications serving thousands of users, while establishing comprehensive coding standards and best practices. My focus on code quality and mentorship has resulted in improved team productivity and reduced technical debt. I'm particularly proud of creating detailed documentation and coding style guides that have become essential resources for team development and onboarding.\n\nBeyond technical implementation, I excel in process improvement, having implemented effective peer-review systems and automated testing solutions. My collaborative approach with product owners and QA teams has led to more efficient release cycles and higher quality deliverables.`,
   from: '2018-05',
   location: 'Odessa, TX 79763',
   phone: '1 432 231 0759',
