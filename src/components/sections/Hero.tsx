@@ -1,19 +1,26 @@
 'use client';
 
-import { motion } from 'framer-motion';
+import { motion, HTMLMotionProps } from 'framer-motion';
 import { LuArrowDown } from 'react-icons/lu';
 import Link from 'next/link';
 import { personalInfo } from '@/data';
+import clsx from 'clsx';
 
-const Hero = () => {
+type HeroProps = HTMLMotionProps<'section'>;
+
+const Hero = ({ className, ...props }: HeroProps) => {
   return (
     <motion.section
       initial={{ opacity: 0, y: 20 }}
       whileInView={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5 }}
       viewport={{ once: true }}
-      className="flex min-h-screen flex-col items-center justify-center px-4"
+      className={clsx(
+        'flex min-h-screen flex-col items-center justify-center px-4',
+        className,
+      )}
       data-testid="hero"
+      {...props}
     >
       <div className="py-16">
         <div className="mb-4" data-testid="hero-intro">

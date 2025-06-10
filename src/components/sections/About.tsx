@@ -1,17 +1,21 @@
 'use client';
 
-import { motion } from 'framer-motion';
+import { motion, HTMLMotionProps } from 'framer-motion';
 import { personalInfo, skills } from '@/data';
+import clsx from 'clsx';
 
-const About = () => {
+type AboutProps = HTMLMotionProps<'section'>;
+
+const About = ({ className, ...props }: AboutProps) => {
   return (
     <motion.section
-      id="about"
       initial={{ opacity: 0, y: 20 }}
       whileInView={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5 }}
       viewport={{ once: true }}
-      className="min-h-screen px-4"
+      className={clsx('min-h-screen px-4', className)}
+      data-testid="about"
+      {...props}
     >
       <div className="pb-16 pt-32">
         <h2 className="text-3xl font-bold">About Me</h2>

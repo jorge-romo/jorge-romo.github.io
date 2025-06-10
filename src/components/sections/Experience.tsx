@@ -1,7 +1,8 @@
 'use client';
 
-import { motion } from 'framer-motion';
+import { HTMLMotionProps, motion } from 'framer-motion';
 import { format } from 'date-fns';
+import clsx from 'clsx';
 import { experiences } from '@/data/experience';
 
 const formatDate = (dateStr: string) => {
@@ -9,7 +10,9 @@ const formatDate = (dateStr: string) => {
   return format(new Date(dateStr), 'MMM yyyy');
 };
 
-const Experience = () => {
+type ExperienceProps = HTMLMotionProps<'section'>;
+
+const Experience = ({ className, ...props }: ExperienceProps) => {
   return (
     <motion.section
       id="experience"
@@ -17,7 +20,9 @@ const Experience = () => {
       whileInView={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5 }}
       viewport={{ once: true }}
-      className="min-h-screen px-4"
+      className={clsx('min-h-screen px-4', className)}
+      data-testid="experience"
+      {...props}
     >
       <div className="pb-16 pt-32">
         <h2 className="mb-8 text-3xl font-bold">Experience</h2>

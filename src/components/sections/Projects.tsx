@@ -1,12 +1,15 @@
 'use client';
 
-import { motion } from 'framer-motion';
+import { motion, HTMLMotionProps } from 'framer-motion';
 import Image from 'next/image';
 import { SiGithub } from 'react-icons/si';
 import { FiExternalLink } from 'react-icons/fi';
 import { projects } from '@/data/projects';
+import clsx from 'clsx';
 
-const Projects = () => {
+type ProjectsProps = HTMLMotionProps<'section'>;
+
+const Projects = ({ className, ...props }: ProjectsProps) => {
   return (
     <motion.section
       id="projects"
@@ -14,7 +17,9 @@ const Projects = () => {
       whileInView={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5 }}
       viewport={{ once: true }}
-      className="min-h-screen px-4"
+      className={clsx('min-h-screen px-4', className)}
+      data-testid="projects"
+      {...props}
     >
       <div className="pb-16 pt-32">
         <h2 className="mb-4 text-3xl font-bold">Projects</h2>

@@ -1,21 +1,24 @@
 'use client';
 
-import { motion } from 'framer-motion';
+import { motion, HTMLMotionProps } from 'framer-motion';
 import ContactForm from '@/components/ContactForm';
 import clsx from 'clsx';
 import { socialLinks } from '@/data';
 
-const Contact = () => {
+type ContactProps = HTMLMotionProps<'section'>;
+
+const Contact = ({ className, ...props }: ContactProps) => {
   const validLinks = socialLinks.filter((link) => link.url);
 
   return (
     <motion.section
-      id="contact"
       initial={{ opacity: 0, y: 20 }}
       whileInView={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5 }}
       viewport={{ once: true }}
-      className="min-h-screen px-4"
+      className={clsx('min-h-screen px-4', className)}
+      data-testid="contact"
+      {...props}
     >
       <div className="pb-16 pt-32">
         <h2 className="mb-16 text-center text-3xl font-bold">Get in Touch</h2>
