@@ -2,17 +2,22 @@
 
 import { motion } from 'framer-motion';
 import ContactForm from '@/components/ContactForm';
+import clsx from 'clsx';
 import { socialLinks } from '@/data';
 
 const Contact = () => {
+  const validLinks = socialLinks.filter((link) => link.url);
+
   return (
-    <section id="contact" className="mx-auto min-h-screen px-4 py-16">
-      <motion.div
-        initial={{ opacity: 0, y: 20 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.5 }}
-        viewport={{ once: true }}
-      >
+    <motion.section
+      id="contact"
+      initial={{ opacity: 0, y: 20 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.5 }}
+      viewport={{ once: true }}
+      className="min-h-screen px-4"
+    >
+      <div className="pb-16 pt-32">
         <h2 className="mb-16 text-center text-3xl font-bold">Get in Touch</h2>
 
         <div className="grid gap-8 md:grid-cols-2">
@@ -29,18 +34,23 @@ const Contact = () => {
               opportunities. Feel free to reach out if you&apos;d like to
               connect!
             </p>
-            <div className="flex gap-6">
-              {socialLinks.map((link) => (
-                <a
+            <div className="flex gap-4">
+              {validLinks.map((link) => (
+                <motion.a
                   key={link.name}
                   href={link.url}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 rounded-full bg-secondary p-3 text-secondary-foreground transition-colors hover:bg-secondary/80"
-                  aria-label={link.name}
+                  className={clsx(
+                    'flex items-center justify-center rounded-full bg-white p-4 text-primary shadow-md transition-all dark:bg-gray-800',
+                    'hover:bg-[--hover-color] hover:text-white hover:shadow-lg dark:hover:text-[--hover-color]',
+                  )}
+                  style={{ '--hover-color': link.color } as React.CSSProperties}
+                  whileHover={{ scale: 1.1 }}
+                  whileTap={{ scale: 0.95 }}
                 >
-                  <link.icon className="h-6 w-6" />
-                </a>
+                  <link.icon className="h-5 w-5" />
+                </motion.a>
               ))}
             </div>
           </motion.div>
@@ -55,8 +65,8 @@ const Contact = () => {
             <ContactForm />
           </motion.div>
         </div>
-      </motion.div>
-    </section>
+      </div>
+    </motion.section>
   );
 };
 

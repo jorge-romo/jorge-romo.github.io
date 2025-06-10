@@ -11,7 +11,7 @@ import { useScrollSpy } from './hooks/useScrollSpy';
 const navItems = [
   { href: '#', label: 'Home' },
   { href: '#about', label: 'About' },
-  { href: '#experience', label: 'Experience' },
+  // { href: '#experience', label: 'Experience' },
   { href: '#projects', label: 'Projects' },
   { href: '#contact', label: 'Contact' },
 ];
@@ -49,18 +49,22 @@ const Header: React.FC = () => {
             JR
           </Link>
 
-          {/* Mobile Menu Button */}
-          <Button
-            variant="default"
-            size="sm"
-            onClick={() => setIsMenuOpen(true)}
-            aria-label="Open menu"
-            className="md:hidden"
-            rounded="full"
-          >
-            <LuMenu className="h-5 w-5" />
-          </Button>
-          <NavMenu navItems={navItems} activeId={activeId} />
+          <NavMenu isMobile={false} navItems={navItems} activeId={activeId}>
+            {/* <DownloadResumeButton /> */}
+          </NavMenu>
+
+          <div className="md:hidden">
+            {/* <DownloadResumeButton /> */}
+            <Button
+              variant="default"
+              size="sm"
+              onClick={() => setIsMenuOpen(true)}
+              aria-label="Open menu"
+              rounded="full"
+            >
+              <LuMenu className="h-5 w-5" />
+            </Button>
+          </div>
         </div>
       </div>
 

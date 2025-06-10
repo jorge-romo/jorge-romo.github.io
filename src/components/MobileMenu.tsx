@@ -45,7 +45,7 @@ const MobileMenu: React.FC<MobileMenuProps> = ({
     <AnimatePresence>
       {isMobileMenuOpen && (
         <motion.div
-          className="fixed inset-0 z-50 flex flex-col items-center justify-center space-y-6 bg-white/70 backdrop-blur-md dark:bg-zinc-900/70"
+          className="fixed inset-0 z-50 flex flex-col items-center justify-center space-y-6 bg-white/70 backdrop-blur-md dark:bg-zinc-900/70 md:hidden"
           initial={{ y: '-100%' }}
           animate={{ y: 0 }}
           exit={{ y: '-100%' }}

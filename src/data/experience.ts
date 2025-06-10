@@ -11,7 +11,7 @@ export type IExperience = {
 
 export const experiences: IExperience[] = [
   {
-    company: 'Hitachi Vantara LLC',
+    company: 'Hitachi Digital Services',
     position: 'Senior Full Stack Engineer',
     location: 'Remote',
     startDate: '2022-01',

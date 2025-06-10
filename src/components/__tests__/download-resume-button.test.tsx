@@ -1,5 +1,5 @@
 import { render, screen } from '@testing-library/react';
-import DownloadResumeButton from '../DownloadResumeButton';
+import DownloadResumeButton from '../ui/DownloadResumeButton';
 
 describe('DownloadResumeButton', () => {
   it('renders download resume button', () => {

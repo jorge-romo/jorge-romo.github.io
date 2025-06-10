@@ -8,14 +8,16 @@ import { projects } from '@/data/projects';
 
 const Projects = () => {
   return (
-    <section id="projects" className="mx-auto min-h-screen px-4 py-16">
-      <motion.div
-        initial={{ opacity: 0, y: 20 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.5 }}
-        viewport={{ once: true }}
-      >
-        <h2 className="text-3xl font-bold">Projects</h2>
+    <motion.section
+      id="projects"
+      initial={{ opacity: 0, y: 20 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.5 }}
+      viewport={{ once: true }}
+      className="min-h-screen px-4"
+    >
+      <div className="pb-16 pt-32">
+        <h2 className="mb-4 text-3xl font-bold">Projects</h2>
         <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
           {projects.map((project) => (
             <motion.div
@@ -80,8 +82,8 @@ const Projects = () => {
             </motion.div>
           ))}
         </div>
-      </motion.div>
-    </section>
+      </div>
+    </motion.section>
   );
 };
 

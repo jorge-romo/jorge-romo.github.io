@@ -39,7 +39,7 @@ export const personalInfo: IPersonalInfo = {
   nameShort: 'Jorge',
   title: 'Senior Full Stack Engineer',
   bio: "I'm a Senior Full Stack Engineer at Hitachi Digital Services with over 6 years of experience in developing scalable applications. My expertise spans cloud infrastructure, serverless architectures, and full-stack development. I'm passionate about creating efficient solutions that enhance application performance and user experience while maintaining high code quality standards.",
-  summary: `As a Senior Full Stack Engineer, I specialize in architecting and developing robust applications using modern technologies like React, TypeScript, .NET Core, Java, and Node.js. My experience includes implementing serverless architectures with AWS Lambda and Azure Functions, leading to significant performance improvements and reduced operational costs.\n\nI've successfully led the development of full-stack applications serving thousands of users, while establishing comprehensive coding standards and best practices. My focus on code quality and mentorship has resulted in improved team productivity and reduced technical debt. I'm particularly proud of creating detailed documentation and coding style guides that have become essential resources for team development and onboarding.\n\nBeyond technical implementation, I excel in process improvement, having implemented effective peer-review systems and automated testing solutions. My collaborative approach with product owners and QA teams has led to more efficient release cycles and higher quality deliverables.`,
+  summary: `As a Senior Full Stack Engineer, I specialize in architecting and developing robust applications using modern technologies like React, TypeScript, .NET Core, Java, and Node.js. My experience includes implementing serverless architectures with AWS Lambda and Azure Functions, leading to significant performance improvements and reduced operational costs.\n\nI've successfully led the development of full-stack applications serving thousands of users, while establishing comprehensive coding standards and best practices. My focus on code quality and mentorship has resulted in improved team productivity and reduced technical debt. I'm particularly proud of creating detailed documentation and coding style guides that have become essential resources for team development and onboarding.`,
   from: '2018-05',
   location: 'Odessa, TX 79763',
   phone: '1 432 231 0759',
@@ -47,8 +47,9 @@ export const personalInfo: IPersonalInfo = {
 
 export type ISocialLink = {
   name: string;
-  url: string;
+  url?: string;
   icon: IconType;
+  color: string;
 };
 
 export const socialLinks: ISocialLink[] = [
@@ -56,21 +57,25 @@ export const socialLinks: ISocialLink[] = [
     name: 'LinkedIn',
     url: 'https://www.linkedin.com/in/jorge-romo',
     icon: SiLinkedin,
+    color: '#0077B5',
   },
   {
     name: 'GitHub',
     url: 'https://github.com/jorge-romo',
     icon: SiGithub,
+    color: '#181717',
   },
   {
     name: 'X',
-    url: 'https://x.com/jorge_romo',
+    // url: 'https://x.com/jorge_romo',
     icon: SiX,
+    color: '#000000',
   },
   {
     name: 'Email',
     url: 'mailto:jorge.romo.692@gmail.com',
     icon: SiGoogle,
+    color: '#EA4335',
   },
 ];
 

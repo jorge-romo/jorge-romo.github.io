@@ -3,8 +3,7 @@ import type { Metadata } from 'next';
 import Header from '@/components/Header';
 import './globals.css';
 import Footer from '@/components/Footer';
-import ThemeProvider from '@/components/ui/ThemeProvider';
-import ScrollToTopButton from '@/components/ui/ScrollToTopButton';
+import { ThemeProvider, ScrollToTopButton } from '@/components/ui';
 import { config, personalInfo } from '@/data';
 
 export const metadata: Metadata = {

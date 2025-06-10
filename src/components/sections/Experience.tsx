@@ -11,13 +11,15 @@ const formatDate = (dateStr: string) => {
 
 const Experience = () => {
   return (
-    <section id="experience" className="mx-auto min-h-screen px-4 py-16">
-      <motion.div
-        initial={{ opacity: 0, y: 20 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }}
-        transition={{ duration: 0.5 }}
-      >
+    <motion.section
+      id="experience"
+      initial={{ opacity: 0, y: 20 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.5 }}
+      viewport={{ once: true }}
+      className="min-h-screen px-4"
+    >
+      <div className="pb-16 pt-32">
         <h2 className="mb-8 text-3xl font-bold">Experience</h2>
         <div className="space-y-8">
           {experiences.map((exp, index) => (
@@ -48,8 +50,8 @@ const Experience = () => {
             </motion.div>
           ))}
         </div>
-      </motion.div>
-    </section>
+      </div>
+    </motion.section>
   );
 };
 
