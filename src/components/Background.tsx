@@ -1,7 +1,16 @@
 'use client';
 
 import { useEffect, useRef } from 'react';
-import * as THREE from 'three';
+import {
+  WebGLRenderer,
+  Scene,
+  PerspectiveCamera,
+  Points,
+  BufferGeometry,
+  BufferAttribute,
+  PointsMaterial,
+  TextureLoader,
+} from 'three';
 import { motion } from 'framer-motion';
 import { useTheme } from 'next-themes';
 
@@ -9,12 +18,49 @@ interface BackgroundProps {
   className?: string;
 }
 
+// Create circular texture
+const createCircleTexture = (theme: string | undefined) => {
+  const canvas = document.createElement('canvas');
+  canvas.width = 32;
+  canvas.height = 32;
+  const context = canvas.getContext('2d');
+  if (!context) return null;
+
+  const gradient = context.createRadialGradient(
+    canvas.width / 2,
+    canvas.height / 2,
+    0,
+    canvas.width / 2,
+    canvas.height / 2,
+    canvas.width / 2,
+  );
+
+  if (theme === 'dark') {
+    gradient.addColorStop(0, 'rgba(255,255,255,0.8)');
+    gradient.addColorStop(0.2, 'rgba(255,255,255,0.6)');
+    gradient.addColorStop(0.4, 'rgba(255,255,255,0.3)');
+    gradient.addColorStop(1, 'rgba(255,255,255,0)');
+  } else {
+    gradient.addColorStop(0, 'rgba(0,0,0,0.8)');
+    gradient.addColorStop(0.2, 'rgba(0,0,0,0.6)');
+    gradient.addColorStop(0.4, 'rgba(0,0,0,0.3)');
+    gradient.addColorStop(1, 'rgba(0,0,0,0)');
+  }
+
+  context.fillStyle = gradient;
+  context.fillRect(0, 0, canvas.width, canvas.height);
+
+  return canvas;
+};
+
 const Background = ({ className }: BackgroundProps) => {
   const containerRef = useRef<HTMLDivElement>(null);
-  const sceneRef = useRef<THREE.Scene | null>(null);
-  const cameraRef = useRef<THREE.PerspectiveCamera | null>(null);
-  const rendererRef = useRef<THREE.WebGLRenderer | null>(null);
-  const particlesRef = useRef<THREE.Points | null>(null);
+  const sceneRef = useRef<Scene | null>(null);
+  const cameraRef = useRef<PerspectiveCamera | null>(null);
+  const rendererRef = useRef<WebGLRenderer | null>(null);
+  const particlesRef = useRef<Points<BufferGeometry, PointsMaterial> | null>(
+    null,
+  );
   const animationFrameRef = useRef<number>(0);
   const { resolvedTheme } = useTheme();
 
@@ -44,11 +90,11 @@ const Background = ({ className }: BackgroundProps) => {
     cleanup();
 
     // Scene setup
-    const scene = new THREE.Scene();
+    const scene = new Scene();
     sceneRef.current = scene;
 
     // Camera setup
-    const camera = new THREE.PerspectiveCamera(
+    const camera = new PerspectiveCamera(
       75,
       window.innerWidth / window.innerHeight,
       0.1,
@@ -58,7 +104,7 @@ const Background = ({ className }: BackgroundProps) => {
     cameraRef.current = camera;
 
     // Renderer setup
-    const renderer = new THREE.WebGLRenderer({
+    const renderer = new WebGLRenderer({
       alpha: true,
       antialias: true,
     });
@@ -68,7 +114,7 @@ const Background = ({ className }: BackgroundProps) => {
     rendererRef.current = renderer;
 
     // Particles setup
-    const particlesGeometry = new THREE.BufferGeometry();
+    const particlesGeometry = new BufferGeometry();
     const particlesCount = 2000;
     const posArray = new Float32Array(particlesCount * 3);
 
@@ -78,18 +124,18 @@ const Background = ({ className }: BackgroundProps) => {
 
     particlesGeometry.setAttribute(
       'position',
-      new THREE.BufferAttribute(posArray, 3),
+      new BufferAttribute(posArray, 3),
     );
 
-    const particlesMaterial = new THREE.PointsMaterial({
+    const particlesMaterial = new PointsMaterial({
       size: 0.02,
       color: '#000000',
       transparent: true,
-      opacity: 0.2,
+      opacity: 0.5,
       sizeAttenuation: true,
     });
 
-    const particles = new THREE.Points(particlesGeometry, particlesMaterial);
+    const particles = new Points(particlesGeometry, particlesMaterial);
     scene.add(particles);
     particlesRef.current = particles;
 
@@ -125,15 +171,31 @@ const Background = ({ className }: BackgroundProps) => {
   }, []);
 
   useEffect(() => {
+    if (!particlesRef.current) return;
+
     if (resolvedTheme === 'dark') {
-      (particlesRef.current?.material as THREE.PointsMaterial).color.set(
+      (particlesRef.current?.material as PointsMaterial).color.set(
         'rgba(255, 255, 255, 0.5)',
       );
     } else {
-      (particlesRef.current?.material as THREE.PointsMaterial).color.set(
+      (particlesRef.current?.material as PointsMaterial).color.set(
         'rgba(0, 0, 0, 0.3)',
       );
     }
+
+    const circleTexture = createCircleTexture(resolvedTheme);
+    const textureLoader = new TextureLoader();
+    const texture = circleTexture
+      ? textureLoader.load(circleTexture.toDataURL())
+      : null;
+    particlesRef.current.material.map = texture;
+    particlesRef.current.material.blending = 2;
+
+    return () => {
+      if (texture) {
+        texture.dispose();
+      }
+    };
   }, [resolvedTheme]);
 
   return (

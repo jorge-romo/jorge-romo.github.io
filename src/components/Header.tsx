@@ -3,10 +3,10 @@
 import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { LuMenu } from 'react-icons/lu';
-import { Button } from '@/components/ui';
+import { Button } from '@/components/ui/Button';
 import MobileMenu from '@/components/MobileMenu';
 import NavMenu from '@/components/NavMenu';
-import { useScrollSpy } from './hooks/useScrollSpy';
+import { useScrollSpy } from '@/components/hooks/useScrollSpy';
 
 const navItems = [
   { href: '#', label: 'Home' },

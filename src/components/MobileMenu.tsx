@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import { AnimatePresence, motion, PanInfo } from 'framer-motion';
 import { LuChevronUp, LuX } from 'react-icons/lu';
-import { Button } from '@/components/ui';
+import { Button } from '@/components/ui/Button';
 import NavMenu from '@/components/NavMenu';
 
 export interface MobileMenuProps {

@@ -3,7 +3,7 @@
 import React, { useCallback, useEffect, useState } from 'react';
 import { LuArrowUp as ArrowUp } from 'react-icons/lu';
 import clsx from 'clsx';
-import { Button } from '.';
+import { Button } from '@/components/ui/Button';
 
 const ScrollToTopButton: React.FC = () => {
   const [isVisible, setIsVisible] = useState(false);

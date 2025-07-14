@@ -1,9 +1,11 @@
+import './globals.css';
+
 import React from 'react';
 import type { Metadata } from 'next';
 import Header from '@/components/Header';
-import './globals.css';
 import Footer from '@/components/Footer';
-import { ThemeProvider, ScrollToTopButton } from '@/components/ui';
+import ThemeProvider from '@/components/ui/ThemeProvider';
+import ScrollToTopButton from '@/components/ui/ScrollToTopButton';
 import { config, personalInfo } from '@/data';
 
 export const metadata: Metadata = {

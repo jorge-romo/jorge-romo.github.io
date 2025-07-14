@@ -67,7 +67,7 @@ export const socialLinks: ISocialLink[] = [
   },
   {
     name: 'X',
-    // url: 'https://x.com/jorge_romo',
+    url: 'https://x.com/jorge_romo',
     icon: SiX,
     color: '#000000',
   },

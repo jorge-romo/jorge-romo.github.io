@@ -1,7 +1,7 @@
 import React from 'react';
 import Link from 'next/link';
 import clsx from 'clsx';
-import { ToggleTheme } from '@/components/ui';
+import ToggleTheme from '@/components/ui/ToggleTheme';
 
 export interface NavMenuProps {
   navItems: { href: string; label: string }[];

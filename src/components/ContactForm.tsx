@@ -2,7 +2,7 @@
 
 import React, { useState } from 'react';
 import { useForm } from 'react-hook-form';
-import { Button } from '@/components/ui';
+import { Button } from '@/components/ui/Button';
 
 interface FormData {
   name: string;

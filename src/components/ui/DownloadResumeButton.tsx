@@ -4,7 +4,7 @@ import React from 'react';
 import { LuDownload } from 'react-icons/lu';
 import { getFileNameFromPath } from '@/utilities';
 import { personalInfo } from '@/data';
-import { Button } from '@/components/ui';
+import { Button } from '@/components/ui/Button';
 
 const DownloadResumeButton: React.FC<React.ComponentPropsWithRef<'button'>> = (
   props,
